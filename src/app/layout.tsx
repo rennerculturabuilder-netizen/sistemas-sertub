@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Curvadora Sertub | Plano de Monitoramento & Evolução",
-  description: "Monitoramento de tempo real de máquina ligada e controle operacional de processo.",
+  title: "Sertub IA | Inteligência Industrial & Gestão de Ativos",
+  description: "Plataforma avançada de monitoramento, visão computacional e analytics industrial para a Sertub.",
 };
 
 export default function RootLayout({

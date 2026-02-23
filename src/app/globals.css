@@ -49,9 +49,9 @@
 
 :root {
   --radius: 0.5rem;
-  --background: #ffffff;
+  --background: #f4f4f5;
   --foreground: #09090b;
-  --card: #ffffff;
+  --card: #f4f4f5;
   --card-foreground: #09090b;
   --popover: #ffffff;
   --popover-foreground: #09090b;

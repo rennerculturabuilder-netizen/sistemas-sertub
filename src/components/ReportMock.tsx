@@ -2,7 +2,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
-import { Clock, Activity, AlertCircle } from "lucide-react";
+import { Clock, Activity, AlertCircle, TrendingUp } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export function ReportMock() {
     const data = [
@@ -17,61 +18,83 @@ export function ReportMock() {
 
     return (
         <Card className="border-zinc-200 bg-white shadow-sm w-full max-w-2xl mx-auto my-12">
-            <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-orange-500" />
-                    Exemplo de Relatório (Mock)
-                </CardTitle>
-                <CardDescription>Visão semanal de tempo da máquina ligada</CardDescription>
+            <CardHeader className="border-b border-zinc-100 bg-zinc-50/50 rounded-t-xl">
+                <div className="flex justify-between items-start">
+                    <div>
+                        <CardTitle className="text-xl flex items-center gap-2">
+                            <Activity className="w-5 h-5 text-orange-500" />
+                            Analytics Industrial - Curvadora C01
+                        </CardTitle>
+                        <CardDescription>Performance de produção // Semana 08 de 2026</CardDescription>
+                    </div>
+                    <Badge variant="outline" className="border-orange-200 text-orange-700 bg-orange-50">SISTEMA ATIVO</Badge>
+                </div>
             </CardHeader>
 
-            <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div className="bg-zinc-50 rounded-lg p-4 border border-zinc-200 flex flex-col items-center text-center">
-                        <span className="text-muted-foreground text-xs mb-1 uppercase tracking-wider font-semibold">Hoje</span>
-                        <span className="text-2xl font-bold text-zinc-800">6h 32m</span>
-                        <span className="text-xs text-green-500 mt-1 flex items-center gap-1">+12% vs ontem</span>
-                    </div>
-                    <div className="bg-zinc-50 rounded-lg p-4 border border-zinc-200 flex flex-col items-center text-center">
-                        <span className="text-muted-foreground text-xs mb-1 uppercase tracking-wider font-semibold">Sessões</span>
-                        <span className="text-2xl font-bold text-zinc-800">4</span>
-                        <span className="text-xs text-muted-foreground mt-1">ligamentos</span>
-                    </div>
-                    <div className="bg-zinc-50 rounded-lg p-4 border border-zinc-200 flex flex-col items-center text-center">
-                        <span className="text-muted-foreground text-xs mb-1 uppercase tracking-wider font-semibold">Última</span>
-                        <span className="text-lg font-bold text-zinc-800">14:10–15:02</span>
-                        <span className="text-xs text-orange-500 mt-1 font-medium">Duração: 52m</span>
-                    </div>
-                    <div className="bg-zinc-50 rounded-lg p-4 border border-orange-300 flex flex-col items-center text-center relative overflow-hidden">
-                        <div className="absolute top-0 right-0 p-1">
-                            <span className="flex h-2 w-2 relative">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                            </span>
+            <CardContent className="pt-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div className="bg-white border border-zinc-200 p-4 rounded-xl shadow-sm">
+                        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">Disponibilidade</p>
+                        <p className="text-2xl font-black text-zinc-900">94.2%</p>
+                        <div className="w-full h-1 bg-zinc-100 mt-2 rounded-full overflow-hidden">
+                            <div className="w-[94%] h-full bg-green-500" />
                         </div>
-                        <span className="text-muted-foreground text-xs mb-1 uppercase tracking-wider font-semibold">Paradas</span>
-                        <span className="text-2xl font-bold text-zinc-800">3</span>
-                        <span className="text-xs text-muted-foreground mt-1">(curtas &lt;5m)</span>
+                    </div>
+                    <div className="bg-white border border-zinc-200 p-4 rounded-xl shadow-sm">
+                        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">Ciclo Médio</p>
+                        <p className="text-2xl font-black text-zinc-900">18.5s</p>
+                        <p className="text-[10px] text-green-500 font-bold mt-1">▲ OTIMIZADO</p>
+                    </div>
+                    <div className="bg-white border border-zinc-200 p-4 rounded-xl shadow-sm">
+                        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">Produção Real</p>
+                        <p className="text-2xl font-black text-zinc-900">1.240</p>
+                        <p className="text-[10px] text-zinc-400 font-medium mt-1">Peças OK / Turno</p>
+                    </div>
+                    <div className="bg-white border border-orange-200 p-4 rounded-xl shadow-sm bg-orange-50/20">
+                        <p className="text-[10px] font-bold text-orange-500 uppercase tracking-widest mb-1">Refugo IA</p>
+                        <p className="text-2xl font-black text-zinc-900">1.8%</p>
+                        <p className="text-[10px] text-orange-600 font-bold mt-1">▼ REDUÇÃO DE 15%</p>
                     </div>
                 </div>
 
-                <div className="h-64 w-full">
+                <div className="h-64 w-full mb-10">
+                    <p className="text-xs font-bold text-zinc-500 mb-4 uppercase flex items-center gap-2">
+                        <TrendingUp className="w-3 h-3" /> Volume de Dbras por Turno (Mensurável)
+                    </p>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                            <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 12 }} />
+                            <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 12 }} fontStyle="bold" />
                             <YAxis axisLine={false} tickLine={false} tick={{ fill: '#71717a', fontSize: 12 }} />
                             <Tooltip
-                                cursor={{ fill: '#f4f4f5' }}
-                                contentStyle={{ backgroundColor: '#ffffff', borderColor: '#e4e4e7', borderRadius: '8px', color: '#09090b' }}
+                                cursor={{ fill: '#f4f4f5', radius: 4 }}
+                                contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px', color: '#ffffff' }}
                                 itemStyle={{ color: '#f97316' }}
                             />
-                            <Bar dataKey="time" radius={[4, 4, 0, 0]} maxBarSize={40}>
+                            <Bar dataKey="time" radius={[6, 6, 0, 0]} maxBarSize={45}>
                                 {data.map((entry, index) => (
-                                    <Cell key={`cell-${index}`} fill={entry.time > 6 ? '#f97316' : '#a1a1aa'} />
+                                    <Cell key={`cell-${index}`} fill={entry.time > 6 ? '#f97316' : '#e4e4e7'} />
                                 ))}
                             </Bar>
                         </BarChart>
                     </ResponsiveContainer>
+                </div>
+
+                <div className="border-t border-zinc-100 pt-6">
+                    <p className="text-xs font-bold text-zinc-500 mb-4 uppercase">Histórico Recente de Lotes (Dados IA)</p>
+                    <div className="space-y-2">
+                        {[
+                            { id: "LOT-849", mat: "Tubo Inox 3/4\"", status: "OK", waste: "0.5%" },
+                            { id: "LOT-850", mat: "Alumínio 1\"", status: "OK", waste: "1.2%" },
+                            { id: "LOT-851", mat: "Aço Carbono 1.5\"", status: "AVISO", waste: "4.8%" },
+                        ].map((lot, idx) => (
+                            <div key={idx} className="flex items-center justify-between p-3 bg-zinc-50 rounded-lg border border-zinc-100 text-xs text-zinc-600">
+                                <span className="font-bold text-zinc-900">{lot.id}</span>
+                                <span className="w-24 truncate">{lot.mat}</span>
+                                <Badge variant="secondary" className={`text-[9px] ${lot.status === 'OK' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}`}>{lot.status}</Badge>
+                                <span className="font-mono">Perda: {lot.waste}</span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </CardContent>
         </Card>

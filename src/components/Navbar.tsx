@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Menu, Activity, Factory, Cpu, Fingerprint } from "lucide-react";
+import { ArrowLeft, Menu, Activity, Factory, Cpu, Fingerprint, Calculator, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
@@ -23,9 +23,10 @@ export function Navbar() {
     });
 
     const navItems = [
-        { name: "Home", href: "/", icon: <Factory className="w-4 h-4" /> },
-        { name: "Tempo da Máquina", href: "/tempo-maquina", icon: <Activity className="w-4 h-4" /> },
-        { name: "Implementações", href: "/implementacoes", icon: <Cpu className="w-4 h-4" /> },
+        { name: "Reconhecimento Facial", href: "/monitoramento", icon: <Fingerprint className="w-4 h-4" /> },
+        { name: "Sistema Curvadora", href: "/sistema-curvadora", icon: <Activity className="w-4 h-4" /> },
+        { name: "Almoxarifado", href: "/almoxarifado", icon: <Package className="w-4 h-4" /> },
+        { name: "ROI", href: "/roi", icon: <Calculator className="w-4 h-4" /> },
     ];
 
     return (
@@ -37,7 +38,7 @@ export function Navbar() {
                 }}
                 animate={isHidden ? "hidden" : "visible"}
                 transition={{ duration: 0.35, ease: "easeInOut" }}
-                className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border h-20"
+                className="fixed top-0 left-0 right-0 z-50 bg-zinc-200/95 backdrop-blur-md border-b border-zinc-300 h-20 shadow-sm"
             >
                 <div className="container mx-auto px-4 h-full flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -50,26 +51,38 @@ export function Navbar() {
                         )}
                         <Link href="/" className="flex items-center group">
                             <img
-                                src="/logo.png"
-                                alt="Sertub Logo"
-                                className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                src="/gr-labs-black.png"
+                                alt="GR Labs Logo"
+                                className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                             />
                         </Link>
                     </div>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center gap-6">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className={`text-sm font-medium transition-colors hover:text-primary flex items-center gap-2 ${pathname === item.href ? "text-primary" : "text-muted-foreground"
-                                    }`}
-                            >
-                                {item.icon}
-                                {item.name}
-                            </Link>
-                        ))}
+                    <nav className="hidden md:flex items-center gap-2">
+                        {navItems.map((item) => {
+                            const isActive = pathname === item.href;
+                            const isROI = item.name === "ROI";
+
+                            return (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`
+                                        text-xs font-bold uppercase tracking-wider transition-all px-4 py-2 rounded-full flex items-center gap-2
+                                        ${isROI
+                                            ? "bg-zinc-950 text-white hover:bg-zinc-800 shadow-sm"
+                                            : isActive
+                                                ? "bg-orange-500 text-white shadow-md shadow-orange-500/20"
+                                                : "text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900"
+                                        }
+                                    `}
+                                >
+                                    <span className={isROI ? "text-orange-500" : ""}>{item.icon}</span>
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
                     </nav>
 
                     {/* Mobile Toggle */}
@@ -99,7 +112,7 @@ export function Navbar() {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="fixed inset-x-0 top-20 z-40 bg-card border-b border-border md:hidden shadow-xl"
+                        className="fixed inset-x-0 top-20 z-40 bg-zinc-200 border-b border-zinc-300 md:hidden shadow-xl"
                     >
                         <nav className="flex flex-col p-4 gap-2">
                             {navItems.map((item) => (
