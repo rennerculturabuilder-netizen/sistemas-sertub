@@ -11,14 +11,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-zinc-200 min-h-[400px] flex items-center">
-        {/* Background Image with Low Opacity */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-maquina.jpg"
+            src="/hero-maquina.png"
             alt="Fundo Industrial"
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-70 brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-100/80 via-zinc-100/40 to-zinc-100/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
@@ -30,16 +30,18 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 text-zinc-950 uppercase leading-none">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 text-white uppercase leading-none drop-shadow-lg">
             Implementação IA Sertub <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">por GR Labs</span>
           </h1>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="bg-zinc-950 hover:bg-zinc-800 text-white font-bold h-14 px-12 rounded-full group transition-all shadow-lg hover:shadow-xl active:scale-95" asChild>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+            <Button size="lg" className="relative bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-lg h-16 px-16 rounded-full group transition-all shadow-2xl hover:shadow-orange-500/50 active:scale-95" asChild>
               <Link href="/roi">
-                Calcular Retorno (ROI)
-                <Calculator className="ml-2 w-5 h-5 group-hover:rotate-12 transition-transform text-orange-500" />
+                <span className="relative z-10 flex items-center gap-2">
+                  <Calculator className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+                  Calcular Retorno (ROI)
+                </span>
               </Link>
             </Button>
           </div>

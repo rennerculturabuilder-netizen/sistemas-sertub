@@ -51,7 +51,7 @@ export function Navbar() {
                         )}
                         <Link href="/" className="flex items-center group">
                             <img
-                                src="/gr-labs-black.png"
+                                src="/logo-preta.png"
                                 alt="GR Labs Logo"
                                 className="h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                             />
