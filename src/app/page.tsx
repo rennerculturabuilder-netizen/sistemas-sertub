@@ -35,16 +35,7 @@ export default function Home() {
             <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">por GR Labs</span>
           </h1>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
-            <Button size="lg" className="relative bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-lg h-16 px-16 rounded-full group transition-all shadow-2xl hover:shadow-orange-500/50 active:scale-95" asChild>
-              <Link href="/roi">
-                <span className="relative z-10 flex items-center gap-2">
-                  <Calculator className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-                  Calcular Retorno (ROI)
-                </span>
-              </Link>
-            </Button>
-          </div>
+
         </div>
       </section>
 
