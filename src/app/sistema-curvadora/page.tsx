@@ -12,7 +12,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import {
@@ -38,60 +38,58 @@ export default function SistemaCurvadoraPage() {
         <main className="min-h-screen bg-zinc-50 pb-20 font-sans">
             <Navbar />
 
-            <div className="container mx-auto px-4 mt-8 md:mt-16 max-w-6xl">
-                <SectionHeader
-                    badge="Sistema Curvadora"
-                    title="Inteligência Industrial"
-                    subtitle="Monitoramento em tempo real e evolução para gestão digital completa do processo de curvamento."
-                />
-
-                <Tabs defaultValue="fase1" className="w-full mt-12">
-                    <TabsList className="grid w-full grid-cols-2 max-w-2xl mx-auto mb-12 bg-zinc-100 p-1 border border-zinc-200">
-                        <TabsTrigger value="fase1" className="data-[state=active]:bg-white data-[state=active]:text-orange-500 data-[state=active]:shadow-sm font-bold py-3 transition-all">
-                            Fase 1: Monitoramento (Tempo de Máquina)
-                        </TabsTrigger>
-                        <TabsTrigger value="fase2" className="data-[state=active]:bg-white data-[state=active]:text-orange-500 data-[state=active]:shadow-sm font-bold py-3 transition-all">
-                            Fase 2: Gestão (Dashboards & Parâmetros)
-                        </TabsTrigger>
-                    </TabsList>
-
-                    {/* FASE 1 CONTENT */}
-                    <TabsContent value="fase1" className="space-y-16 outline-none">
+            <div className="container mx-auto px-4 max-w-6xl mt-0">
+                <div className="w-full flex flex-col gap-16">
+                    {/* FASE 1 CONTENT as HEADER */}
+                    <div className="space-y-16 outline-none">
                         <motion.section
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
+                            className="w-full relative"
                         >
-                            <Card className="border-l-4 border-l-orange-500 bg-white shadow-sm">
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-xl">
-                                        <Target className="w-5 h-5 text-orange-500" />
-                                        Objetivo da Fase 1
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h4 className="font-semibold text-lg mb-2 text-zinc-800">Inteligência de Ativos</h4>
-                                            <p className="text-zinc-700">
-                                                Monitoramento autônomo do ciclo de vida da máquina. O sistema detecta padrões de consumo para calcular o tempo real de operação (Uptime) sem intervenção humana.
-                                            </p>
+                            {/* Break out of container by negative margins */}
+                            <div className="-mx-4 md:-mx-[calc(50vw-50%)] bg-gradient-to-br from-zinc-900 to-zinc-800 text-white relative overflow-hidden shadow-2xl py-20">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                                <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+
+                                <div className="container mx-auto px-4 max-w-4xl relative z-10 flex flex-col items-center justify-center text-center">
+                                    <Badge className="bg-orange-500 hover:bg-orange-600 mb-6 text-white border-none px-4 py-1 text-sm">Sistema Curvadora</Badge>
+                                    <h1 className="text-4xl md:text-6xl font-extrabold mb-6 uppercase tracking-tight text-white leading-tight">
+                                        Inteligência <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Industrial</span>
+                                    </h1>
+                                    <p className="text-zinc-300 text-lg md:text-xl mb-16 max-w-3xl leading-relaxed">
+                                        Monitoramento em tempo real e evolução para gestão digital completa do processo de curvamento.
+                                    </p>
+
+                                    {/* Divider */}
+                                    <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mb-16" />
+
+                                    <Badge className="bg-orange-500/20 text-orange-400 mb-6 border border-orange-500/30 px-4 py-1">Fundação Automática</Badge>
+                                    <h2 className="text-2xl md:text-4xl font-bold mb-6 tracking-tight">
+                                        Fase 1: Monitoramento <br /><span className="text-zinc-400 text-xl font-normal mt-2 block">Tempo de Máquina Real</span>
+                                    </h2>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left w-full mt-6">
+                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                                            <Target className="w-8 h-8 text-orange-400 mb-4" />
+                                            <h4 className="font-bold mb-2">Inteligência de Ativos</h4>
+                                            <p className="text-sm text-zinc-500">Mapeamento contínuo sobre quando a curvadora está efetivamente operando ou parada através de hardware direto no motor.</p>
                                         </div>
-                                        <div>
-                                            <h4 className="font-semibold text-lg mb-2 text-zinc-800">Retorno sobre Investimento</h4>
-                                            <p className="text-zinc-700">
-                                                Eliminação total de erros de apontamento manual, fornecendo KPIs precisos de produtividade e base de dados sólida para auditorias de custo industrial.
-                                            </p>
+                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                                            <Lightbulb className="w-8 h-8 text-orange-400 mb-4" />
+                                            <h4 className="font-bold mb-2">Retorno sobre Investimento</h4>
+                                            <p className="text-sm text-zinc-500">Eliminação total de erros de apontamento manual, fornecendo KPIs precisos para auditorias de custo industrial e produtividade pura.</p>
                                         </div>
                                     </div>
-                                    <div className="bg-orange-100/50 border border-orange-200 rounded-md p-4 text-sm flex gap-3 items-start mt-4 shadow-sm">
-                                        <AlertCircle className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
-                                        <div className="text-zinc-800">
-                                            <strong className="font-bold">Estratégia de Dados:</strong> Esta etapa consolida a base histórica necessária para alimentar os modelos de IA preditiva na Fase 2.
+
+                                    <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 text-sm flex gap-4 items-center mt-4 shadow-sm w-full text-left">
+                                        <AlertCircle className="w-6 h-6 text-orange-400 shrink-0" />
+                                        <div className="text-zinc-300">
+                                            <strong className="font-bold text-white">Estratégia de Dados:</strong> Esta etapa consolida a sólida base histórica necessária para futuramente alimentar os modelos de Inteligência Artificial da Fase 2.
                                         </div>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </div>
+                            </div>
                         </motion.section>
 
                         <section>
@@ -141,19 +139,22 @@ export default function SistemaCurvadoraPage() {
                             </div>
                         </section>
 
-                        <section className="mt-20 pt-16 border-t border-zinc-200">
-                            <div className="bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-3xl p-8 md:p-12 text-white relative overflow-hidden shadow-2xl">
+                        <section className="mt-20 border-t border-zinc-200">
+                            {/* Break out of container by negative margins */}
+                            <div className="-mx-4 md:-mx-[calc(50vw-50%)] bg-gradient-to-br from-zinc-900 to-zinc-800 text-white relative overflow-hidden shadow-2xl py-16">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
                                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
-                                <div className="relative z-10">
-                                    <Badge className="bg-orange-500 hover:bg-orange-600 mb-6 text-white border-none px-4 py-1">Próximo Nível</Badge>
-                                    <h2 className="text-3xl md:text-5xl font-bold mb-6 uppercase tracking-tight">Fase 2: Gestão Inteligente <br /><span className="text-orange-400">e Dashboards Operacionais</span></h2>
-                                    <p className="text-zinc-400 text-lg mb-10 max-w-3xl leading-relaxed">
+                                <div className="container mx-auto px-4 max-w-4xl relative z-10 flex flex-col items-center justify-center text-center">
+                                    <Badge className="bg-orange-500/20 text-orange-400 mb-6 border border-orange-500/30 px-4 py-1">Próximo Nível</Badge>
+                                    <h2 className="text-2xl md:text-4xl font-bold mb-6 tracking-tight">
+                                        Fase 2: Gestão Inteligente <br /><span className="text-zinc-400 text-xl font-normal mt-2 block">e Dashboards Operacionais</span>
+                                    </h2>
+                                    <p className="text-zinc-300 text-lg md:text-xl mb-12 max-w-3xl leading-relaxed">
                                         Após consolidar o monitoramento automático, o sistema evolui para o controle total do processo. Digitalize o setup, reduza o refugo e transforme a experiência do operador em dados acionáveis.
                                     </p>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left w-full mt-2">
                                         <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
                                             <Lightbulb className="w-8 h-8 text-orange-400 mb-4" />
                                             <h4 className="font-bold mb-2">Setup Digital</h4>
@@ -172,10 +173,8 @@ export default function SistemaCurvadoraPage() {
                                     </div>
 
                                     <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold h-12 px-8 rounded-full transition-all hover:scale-105 active:scale-95 group" onClick={() => {
-                                        const tabsList = document.querySelector('[role="tablist"]');
-                                        const fase2Btn = tabsList?.querySelector('[value="fase2"]') as HTMLButtonElement;
-                                        fase2Btn?.click();
-                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                        const fase2Content = document.getElementById('fase2-content');
+                                        fase2Content?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                                     }}>
                                         Explorar Fase 2
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -183,10 +182,10 @@ export default function SistemaCurvadoraPage() {
                                 </div>
                             </div>
                         </section>
-                    </TabsContent>
+                    </div>
 
                     {/* FASE 2 CONTENT */}
-                    <TabsContent value="fase2" className="space-y-16 outline-none">
+                    <div id="fase2-content" className="space-y-16 outline-none">
                         <motion.section
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -308,8 +307,8 @@ export default function SistemaCurvadoraPage() {
                                 </div>
                             </div>
                         </section>
-                    </TabsContent>
-                </Tabs>
+                    </div>
+                </div>
 
                 {/* Checklist de Viabilidade */}
                 <section className="mt-20 mb-16">
