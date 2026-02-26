@@ -51,6 +51,12 @@ export default function Home() {
       {/* Main Systems Section - Darker Gray for Division */}
       <section className="bg-zinc-200 py-20 border-t border-zinc-300">
         <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto mb-8">
+            <h2 className="text-sm font-bold tracking-widest text-zinc-500 uppercase flex items-center gap-3">
+              Sistemas
+              <span className="h-px flex-1 bg-zinc-300"></span>
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
             {/* Card 1: Sistema de Reconhecimento Facial */}
