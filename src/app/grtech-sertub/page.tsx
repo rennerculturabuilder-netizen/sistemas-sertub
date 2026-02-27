@@ -17,7 +17,8 @@ import {
     Layers,
     TrendingUp,
     Factory,
-    Lock
+    Lock,
+    ArrowLeft
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -361,6 +362,20 @@ export default function ProjetoSertub() {
                         </div>
                     </Card>
                 </section>
+
+                <div className="flex justify-center pb-10">
+                    <Button
+                        asChild
+                        variant="ghost"
+                        size="lg"
+                        className="group text-zinc-500 hover:text-orange-500 hover:bg-orange-50 font-bold tracking-widest uppercase transition-all"
+                    >
+                        <Link href="/">
+                            <ArrowLeft className="w-5 h-5 mr-3 group-hover:-translate-x-1 transition-transform" />
+                            Voltar para a Home
+                        </Link>
+                    </Button>
+                </div>
 
             </div>
         </main>
