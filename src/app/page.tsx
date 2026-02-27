@@ -23,22 +23,26 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           {/* Top Logos */}
-          <div className="flex items-center justify-center gap-4 md:gap-8 mb-8">
-            <img
-              src="/logoGRTECH-branca.png"
-              alt="GR Tech Logo"
-              className="h-8 md:h-10 lg:h-12 w-auto object-contain drop-shadow-md opacity-90"
-            />
+          <div className="flex items-center justify-center w-full mb-8 max-w-2xl mx-auto">
+            <div className="flex-1 flex justify-end pr-4 md:pr-8">
+              <img
+                src="/logoGRTECH-branca.png"
+                alt="GR Tech Logo"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md opacity-90"
+              />
+            </div>
 
-            <span className="text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 drop-shadow-md px-2">
+            <span className="text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 drop-shadow-md shrink-0 leading-none -mt-1">
               +
             </span>
 
-            <img
-              src="/LOGO-SERTUB-BRANCA.png"
-              alt="Sertub Logo"
-              className="h-8 md:h-10 lg:h-12 w-auto object-contain drop-shadow-md opacity-90"
-            />
+            <div className="flex-1 flex justify-start pl-4 md:pl-8">
+              <img
+                src="/LOGO-SERTUB-BRANCA.png"
+                alt="Sertub Logo"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md opacity-90"
+              />
+            </div>
           </div>
 
           {/* Main Title */}
