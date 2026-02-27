@@ -28,7 +28,7 @@ export default function Home() {
               <img
                 src="/logoGRTECH-branca.png"
                 alt="GR Tech Logo"
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md opacity-90"
+                className="h-12 md:h-16 lg:h-20 w-auto object-contain drop-shadow-md opacity-90"
               />
             </div>
 
@@ -40,7 +40,7 @@ export default function Home() {
               <img
                 src="/LOGO-SERTUB-BRANCA.png"
                 alt="Sertub Logo"
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain drop-shadow-md opacity-90"
+                className="h-12 md:h-16 lg:h-20 w-auto object-contain drop-shadow-md opacity-90"
               />
             </div>
           </div>

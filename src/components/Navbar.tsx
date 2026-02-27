@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowLeft, Menu, Activity, Factory, Cpu, Fingerprint, Calculator, Package } from "lucide-react";
+import { ArrowLeft, Menu, Activity, Factory, Cpu, Fingerprint, Calculator, Package, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
@@ -27,6 +27,7 @@ export function Navbar() {
         { name: "Sistema Curvadora", href: "/sistema-curvadora", icon: <Activity className="w-4 h-4" /> },
         { name: "Almoxarifado", href: "/almoxarifado", icon: <Package className="w-4 h-4" /> },
         { name: "ROI", href: "/roi", icon: <Calculator className="w-4 h-4" /> },
+        { name: "Saiba Mais", href: "/grtech-sertub", icon: <Info className="w-4 h-4" /> },
     ];
 
     return (
