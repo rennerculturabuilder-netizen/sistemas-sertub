@@ -44,7 +44,7 @@ export default function MonitoramentoPage() {
                                             <AlertCircle className="w-8 h-8 text-red-400 mb-4" />
                                             <h2 className="text-2xl font-bold text-white mb-4">Substituição de Câmeras</h2>
                                             <p className="text-zinc-300 text-lg leading-relaxed">
-                                                A implementação do reconhecimento facial exige troca das câmeras atuais e adequação da infraestrutura. Essa etapa deve ser realizada por empresa especializada em CFTV industrial.
+                                                A implementação do reconhecimento facial exige troca das câmeras atuais e adequação da infraestrutura. Essa etapa deve ser realizada por empresa especializada.
                                             </p>
                                         </div>
                                     </div>

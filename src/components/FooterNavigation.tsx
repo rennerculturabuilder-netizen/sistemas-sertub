@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export function FooterNavigation() {
@@ -12,29 +11,22 @@ export function FooterNavigation() {
                         A implementação final será definida de acordo com as prioridades da empresa.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full mt-6">
-                        <Button
-                            variant="outline"
-                            size="lg"
-                            className="w-full sm:w-auto border-zinc-300 text-zinc-700 bg-transparent hover:bg-zinc-100 hover:text-zinc-900 font-semibold text-sm h-12 px-8 transition-all active:scale-95 uppercase tracking-widest group"
-                            asChild
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mt-6">
+                        <Link
+                            href="/"
+                            className="text-sm font-bold uppercase tracking-widest transition-all px-8 py-3 rounded-full flex items-center gap-2 text-zinc-600 hover:bg-zinc-200 hover:text-zinc-900 w-full sm:w-auto justify-center group shadow-sm hover:shadow-md"
                         >
-                            <Link href="/">
-                                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-                                Voltar para Home
-                            </Link>
-                        </Button>
+                            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                            Voltar para Home
+                        </Link>
 
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm h-12 px-8 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest group shadow-md"
-                            asChild
+                        <Link
+                            href="/proximos-passos"
+                            className="text-sm font-bold uppercase tracking-widest transition-all px-8 py-3 rounded-full flex items-center gap-2 bg-orange-500 text-white shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:shadow-xl hover:shadow-orange-500/40 w-full sm:w-auto justify-center group hover:scale-105"
                         >
-                            <Link href="/proximos-passos">
-                                Próximos Passos
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Link>
-                        </Button>
+                            Próximos Passos
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
                     </div>
                 </div>
             </div>

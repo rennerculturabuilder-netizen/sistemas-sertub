@@ -117,12 +117,12 @@ export default function SistemaCurvadoraPage() {
                                 {/* Cards de Orçamento e Validação */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
                                     {/* CARD A: ORÇAMENTO */}
-                                    <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-300 transition-colors">
+                                    <Card className="bg-white border-2 border-zinc-300 shadow-xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-2xl hover:ring-orange-200 transition-all relative overflow-hidden">
                                         <CardHeader className="pb-4 pt-8">
                                             <Badge className="bg-zinc-100 text-zinc-600 hover:bg-zinc-200 w-fit mb-4 text-xs font-semibold">Estimativa preliminar</Badge>
                                             <CardTitle className="text-xl font-bold text-zinc-900 leading-tight">Orçamento de Referência <br /><span className="text-sm font-semibold text-zinc-500">— Fase 1 (Máquina Ligada)</span></CardTitle>
                                             <CardDescription className="text-sm mt-3 text-zinc-600 leading-relaxed font-medium">
-                                                Este orçamento é uma referência para estimar investimento. A definição final depende de validação técnica no quadro elétrico e alinhamento com Marcelo (responsável pela máquina) e eletricista NR10.
+                                                Este orçamento é uma referência para estimar investimento. A definição final depende de validação técnica no quadro elétrico e alinhamento com Marcelo (responsável pela máquina).
                                             </CardDescription>
                                         </CardHeader>
                                         <CardContent className="flex flex-col flex-1 px-4 lg:px-6 pb-6">
@@ -198,7 +198,7 @@ export default function SistemaCurvadoraPage() {
                                     </Card>
 
                                     {/* CARD B: VALIDAÇÃO */}
-                                    <Card className="bg-zinc-50 border-zinc-200 shadow-sm flex flex-col h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-100 via-zinc-50 to-white relative overflow-hidden">
+                                    <Card className="bg-zinc-50 border-2 border-orange-300 shadow-xl ring-2 ring-orange-500/10 flex flex-col h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-zinc-50 to-white relative overflow-hidden hover:border-orange-400 hover:shadow-2xl transition-all">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2" />
                                         <CardHeader className="pb-4 pt-8">
                                             <Badge className="bg-orange-100 text-orange-800 border-none w-fit mb-4 text-xs font-bold px-3 py-1">Obrigatório antes da compra</Badge>
@@ -278,6 +278,7 @@ export default function SistemaCurvadoraPage() {
                                             </div>
 
                                         </CardContent>
+                                        <div className="h-2 w-full bg-orange-500 absolute bottom-0 left-0" />
                                     </Card>
                                 </div>
                             </div>
@@ -300,20 +301,20 @@ export default function SistemaCurvadoraPage() {
                                     </p>
 
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left w-full mt-2">
-                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                                        <div className="bg-white/10 border border-white/20 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all shadow-lg">
                                             <Lightbulb className="w-8 h-8 text-orange-400 mb-4" />
-                                            <h4 className="font-bold mb-2">Setup Digital</h4>
-                                            <p className="text-sm text-zinc-500">Parâmetros sugeridos pelo sistema baseados no histórico de sucesso.</p>
+                                            <h4 className="font-bold mb-2 text-white">Setup Digital</h4>
+                                            <p className="text-sm text-zinc-300">Parâmetros sugeridos pelo sistema baseados no histórico de sucesso.</p>
                                         </div>
-                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                                        <div className="bg-white/10 border border-white/20 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all shadow-lg">
                                             <BarChart3 className="w-8 h-8 text-orange-400 mb-4" />
-                                            <h4 className="font-bold mb-2">Dashboards Reais</h4>
-                                            <p className="text-sm text-zinc-500">Indicadores de produtividade por turno, lote e material em tempo real.</p>
+                                            <h4 className="font-bold mb-2 text-white">Dashboards Reais</h4>
+                                            <p className="text-sm text-zinc-300">Indicadores de produtividade por turno, lote e material em tempo real.</p>
                                         </div>
-                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                                        <div className="bg-white/10 border border-white/20 p-6 rounded-2xl backdrop-blur-sm hover:bg-white/15 transition-all shadow-lg">
                                             <CheckCircle2 className="w-8 h-8 text-orange-400 mb-4" />
-                                            <h4 className="font-bold mb-2">Refugo Zero</h4>
-                                            <p className="text-sm text-zinc-500">Controle rigoroso de perdas e identificação de gargalos no material.</p>
+                                            <h4 className="font-bold mb-2 text-white">Refugo Zero</h4>
+                                            <p className="text-sm text-zinc-300">Controle rigoroso de perdas e identificação de gargalos no material.</p>
                                         </div>
                                     </div>
 
@@ -367,12 +368,12 @@ export default function SistemaCurvadoraPage() {
                         {/* Cards de Sistema */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {/* CARD 1 : Admin */}
-                            <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-300 transition-colors">
+                            <Card className="bg-white border-2 border-zinc-300 shadow-2xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:ring-orange-200 transition-all relative overflow-hidden">
                                 <CardHeader className="pb-4 pt-8">
                                     <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
                                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                     </div>
-                                    <CardTitle className="text-2xl font-bold text-zinc-900 leading-tight">Card 1 <br /><span className="text-xl font-bold text-orange-600">Sistema do Administrador</span></CardTitle>
+                                    <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Administrador</CardTitle>
                                     <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
                                         (Acesso pelo computador)
                                     </CardDescription>
@@ -423,12 +424,12 @@ export default function SistemaCurvadoraPage() {
                             </Card>
 
                             {/* CARD 2 : Operador */}
-                            <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-300 transition-colors">
+                            <Card className="bg-white border-2 border-zinc-300 shadow-2xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:ring-orange-200 transition-all relative overflow-hidden">
                                 <CardHeader className="pb-4 pt-8">
                                     <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
                                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                                     </div>
-                                    <CardTitle className="text-2xl font-bold text-zinc-900 leading-tight">Card 2 <br /><span className="text-xl font-bold text-orange-600">Sistema do Operador</span></CardTitle>
+                                    <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Operador</CardTitle>
                                     <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
                                         (Tablet ao lado da máquina)
                                     </CardDescription>
@@ -486,7 +487,7 @@ export default function SistemaCurvadoraPage() {
                         {/* Bloco de Inspeção e Resultados */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
                             {/* Inspeção */}
-                            <div className="bg-white border text-left border-zinc-200 p-8 rounded-2xl shadow-sm relative overflow-hidden h-full flex flex-col">
+                            <div className="bg-white border-2 text-left border-zinc-300 p-8 rounded-2xl shadow-xl ring-1 ring-zinc-200 hover:shadow-2xl hover:ring-orange-200 hover:border-orange-300 transition-all relative overflow-hidden h-full flex flex-col">
                                 <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-500"></div>
                                 <h4 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                                     <svg className="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -508,7 +509,7 @@ export default function SistemaCurvadoraPage() {
                             </div>
 
                             {/* O que nasce aqui */}
-                            <div className="bg-white border text-left border-zinc-200 p-8 rounded-2xl shadow-sm relative overflow-hidden h-full flex flex-col">
+                            <div className="bg-white border-2 text-left border-zinc-300 p-8 rounded-2xl shadow-xl ring-1 ring-zinc-200 hover:shadow-2xl hover:ring-orange-200 hover:border-orange-300 transition-all relative overflow-hidden h-full flex flex-col">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2" />
                                 <h4 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                                     <TrendingDown className="w-6 h-6 text-orange-500" />
@@ -573,7 +574,7 @@ export default function SistemaCurvadoraPage() {
                 {/* Checklist de Viabilidade */}
                 <section className="mt-20 mb-16">
                     <h3 className="text-2xl font-bold mb-6">Checklist de Viabilidade Técnica</h3>
-                    <Card className="bg-white shadow-sm border-zinc-200 overflow-hidden">
+                    <Card className="bg-white shadow-xl border-2 border-zinc-300 ring-1 ring-zinc-200 overflow-hidden relative">
                         <Accordion type="single" collapsible className="w-full">
                             <AccordionItem value="item-1" className="px-6 border-b-zinc-100">
                                 <AccordionTrigger className="hover:text-orange-500 py-6">Infraestrutura Elétrica (NR10)</AccordionTrigger>
