@@ -7,6 +7,8 @@ import { DiagramSVG } from "@/components/DiagramSVG";
 
 
 import { DashboardMockup } from "@/components/DashboardMockup";
+import { AdminDashboardMockup } from "@/components/AdminDashboardMockup";
+import { OperatorDashboardMockup } from "@/components/OperatorDashboardMockup";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
     Accordion,
@@ -14,6 +16,13 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    DialogDescription,
+    DialogTrigger,
+} from "@/components/ui/dialog";
 
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -117,7 +126,7 @@ export default function SistemaCurvadoraPage() {
                                 {/* Cards de Orçamento e Validação */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
                                     {/* CARD A: ORÇAMENTO */}
-                                    <Card className="bg-white border-2 border-zinc-300 shadow-xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-2xl hover:ring-orange-200 transition-all relative overflow-hidden">
+                                    <Card className="bg-white border border-zinc-200 shadow-lg flex flex-col h-full hover:border-orange-400 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
                                         <CardHeader className="pb-4 pt-8">
                                             <Badge className="bg-zinc-100 text-zinc-600 hover:bg-zinc-200 w-fit mb-4 text-xs font-semibold">Estimativa preliminar</Badge>
                                             <CardTitle className="text-xl font-bold text-zinc-900 leading-tight">Orçamento de Referência <br /><span className="text-sm font-semibold text-zinc-500">— Fase 1 (Máquina Ligada)</span></CardTitle>
@@ -198,7 +207,7 @@ export default function SistemaCurvadoraPage() {
                                     </Card>
 
                                     {/* CARD B: VALIDAÇÃO */}
-                                    <Card className="bg-zinc-50 border-2 border-orange-300 shadow-xl ring-2 ring-orange-500/10 flex flex-col h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-zinc-50 to-white relative overflow-hidden hover:border-orange-400 hover:shadow-2xl transition-all">
+                                    <Card className="bg-zinc-50 border border-orange-200 shadow-lg flex flex-col h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-50 via-zinc-50 to-white relative overflow-hidden hover:border-orange-400 hover:shadow-xl transition-all duration-300">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2" />
                                         <CardHeader className="pb-4 pt-8">
                                             <Badge className="bg-orange-100 text-orange-800 border-none w-fit mb-4 text-xs font-bold px-3 py-1">Obrigatório antes da compra</Badge>
@@ -368,127 +377,157 @@ export default function SistemaCurvadoraPage() {
                         {/* Cards de Sistema */}
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {/* CARD 1 : Admin */}
-                            <Card className="bg-white border-2 border-zinc-300 shadow-2xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:ring-orange-200 transition-all relative overflow-hidden">
-                                <CardHeader className="pb-4 pt-8">
-                                    <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
-                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                    </div>
-                                    <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Administrador</CardTitle>
-                                    <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
-                                        (Acesso pelo computador)
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex flex-col flex-1 px-4 lg:px-8 pb-8">
-                                    <h4 className="text-lg font-bold text-zinc-800 mb-4 flex items-center gap-2">
-                                        <BarChart3 className="w-5 h-5 text-orange-500" />
-                                        O painel de controle da operação
-                                    </h4>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-medium mb-8">
-                                        O responsável pela produção passa a ter visão completa da curvadora. Ele consegue:
-                                    </p>
-
-                                    <div className="space-y-4 mb-10 flex-1">
-                                        {[
-                                            "Criar ordens de serviço",
-                                            "Acompanhar produções em andamento",
-                                            "Ver histórico completo de cada lote",
-                                            "Identificar retrabalho",
-                                            "Analisar desempenho por operador",
-                                            "Consultar parâmetros usados anteriormente"
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex gap-3 items-start bg-zinc-50 p-3 rounded-lg border border-zinc-100">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 shrink-0" />
-                                                <span className="text-sm text-zinc-700 font-medium">{item}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="bg-orange-50 p-6 rounded-2xl border border-orange-100 text-sm">
-                                        <p className="font-bold text-zinc-900 mb-4">O que isso gera?</p>
-                                        <div className="space-y-2 mb-6">
-                                            {[
-                                                "Controle real da operação",
-                                                "Decisão baseada em dados",
-                                                "Histórico organizado",
-                                                "Redução de erros recorrentes"
-                                            ].map((item, i) => (
-                                                <div key={i} className="flex gap-2 items-center">
-                                                    <CheckCircle2 className="w-4 h-4 text-green-500" />
-                                                    <span className="font-medium text-orange-900">{item}</span>
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <div className="cursor-pointer h-full transition-transform hover:-translate-y-1 duration-300 relative group">
+                                        <Card className="bg-white border border-zinc-200 shadow-lg flex flex-col h-full hover:border-orange-400 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                                            <CardHeader className="pb-4 pt-8">
+                                                <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+                                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                                 </div>
-                                            ))}
-                                        </div>
-                                        <p className="text-orange-600 font-black uppercase tracking-wider text-xs">É onde a curvadora vira processo.</p>
+                                                <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Administrador</CardTitle>
+                                                <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
+                                                    (Acesso pelo computador)
+                                                </CardDescription>
+                                            </CardHeader>
+                                            <CardContent className="flex flex-col flex-1 px-4 lg:px-8 pb-8">
+                                                <h4 className="text-lg font-bold text-zinc-800 mb-4 flex items-center gap-2">
+                                                    <BarChart3 className="w-5 h-5 text-orange-500" />
+                                                    O painel de controle da operação
+                                                </h4>
+                                                <p className="text-sm text-zinc-600 leading-relaxed font-medium mb-8">
+                                                    O responsável pela produção passa a ter visão completa da curvadora. Ele consegue:
+                                                </p>
+
+                                                <div className="space-y-4 mb-10 flex-1">
+                                                    {[
+                                                        "Criar ordens de serviço",
+                                                        "Acompanhar produções em andamento",
+                                                        "Ver histórico completo de cada lote",
+                                                        "Identificar retrabalho",
+                                                        "Analisar desempenho por operador",
+                                                        "Consultar parâmetros usados anteriormente"
+                                                    ].map((item, i) => (
+                                                        <div key={i} className="flex gap-3 items-start bg-zinc-50 p-3 rounded-lg border border-zinc-100">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 shrink-0" />
+                                                            <span className="text-sm text-zinc-700 font-medium">{item}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
+                                                <div className="bg-orange-50 p-6 rounded-2xl border border-orange-100 text-sm">
+                                                    <p className="font-bold text-zinc-900 mb-4">O que isso gera?</p>
+                                                    <div className="space-y-2 mb-6">
+                                                        {[
+                                                            "Controle real da operação",
+                                                            "Decisão baseada em dados",
+                                                            "Histórico organizado",
+                                                            "Redução de erros recorrentes"
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="flex gap-2 items-center">
+                                                                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                                                                <span className="font-medium text-orange-900">{item}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                    <p className="text-orange-600 font-black uppercase tracking-wider text-xs">É onde a curvadora vira processo.</p>
+                                                </div>
+                                                <p className="mt-6 text-sm flex items-center justify-center gap-1.5 font-bold text-orange-500 group-hover:text-orange-600 transition-colors">
+                                                    <ExternalLink className="w-4 h-4" />
+                                                    Clique para ver o mockup
+                                                </p>
+                                            </CardContent>
+                                        </Card>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-[1000px] w-[90vw] p-0 overflow-hidden bg-transparent border-none shadow-none">
+                                    <DialogTitle className="sr-only">Mockup Sistema Administrador</DialogTitle>
+                                    <DialogDescription className="sr-only">Visualização do mockup do painel de administração da curvadora</DialogDescription>
+                                    <AdminDashboardMockup />
+                                </DialogContent>
+                            </Dialog>
 
                             {/* CARD 2 : Operador */}
-                            <Card className="bg-white border-2 border-zinc-300 shadow-2xl ring-1 ring-zinc-200 flex flex-col h-full hover:border-orange-400 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:ring-orange-200 transition-all relative overflow-hidden">
-                                <CardHeader className="pb-4 pt-8">
-                                    <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
-                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-                                    </div>
-                                    <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Operador</CardTitle>
-                                    <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
-                                        (Tablet ao lado da máquina)
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex flex-col flex-1 px-4 lg:px-8 pb-8">
-                                    <h4 className="text-lg font-bold text-zinc-800 mb-4 flex items-center gap-2">
-                                        <Target className="w-5 h-5 text-orange-500" />
-                                        Simples. Direto. Funcional.
-                                    </h4>
-                                    <p className="text-sm text-zinc-600 leading-relaxed font-medium mb-8">
-                                        O operador não precisa de complexidade. <br />Ele recebe a ordem de serviço no tablet e visualiza:
-                                    </p>
-
-                                    <div className="grid grid-cols-2 gap-3 mb-8">
-                                        {[
-                                            "Tipo de tubo",
-                                            "Espessura",
-                                            "Raio / curvatura",
-                                            "Especificações do pedido"
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex gap-2 items-center bg-zinc-50 p-3 rounded-lg border border-zinc-100">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
-                                                <span className="text-xs text-zinc-700 font-semibold">{item}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className="mb-10 flex-1">
-                                        <p className="text-sm font-bold text-zinc-900 mb-4">Durante a produção, ele registra:</p>
-                                        <div className="space-y-3">
-                                            {[
-                                                "Parâmetros utilizados",
-                                                "Ajustes realizados",
-                                                "Observações importantes"
-                                            ].map((item, i) => (
-                                                <div key={i} className="flex gap-3 items-center bg-orange-50/50 p-3 rounded-lg border border-orange-100/50">
-                                                    <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
-                                                    <span className="text-sm text-zinc-700 font-medium">{item}</span>
+                            <Dialog>
+                                <DialogTrigger asChild>
+                                    <div className="cursor-pointer h-full transition-transform hover:-translate-y-1 duration-300 relative group">
+                                        <Card className="bg-white border border-zinc-200 shadow-lg flex flex-col h-full hover:border-orange-400 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                                            <CardHeader className="pb-4 pt-8">
+                                                <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
+                                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
                                                 </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                                <CardTitle className="text-2xl font-bold text-orange-600 leading-tight">Sistema do Operador</CardTitle>
+                                                <CardDescription className="text-sm mt-2 text-zinc-500 font-medium uppercase tracking-wider">
+                                                    (Tablet ao lado da máquina)
+                                                </CardDescription>
+                                            </CardHeader>
+                                            <CardContent className="flex flex-col flex-1 px-4 lg:px-8 pb-8">
+                                                <h4 className="text-lg font-bold text-zinc-800 mb-4 flex items-center gap-2">
+                                                    <Target className="w-5 h-5 text-orange-500" />
+                                                    Simples. Direto. Funcional.
+                                                </h4>
+                                                <p className="text-sm text-zinc-600 leading-relaxed font-medium mb-8">
+                                                    O operador não precisa de complexidade. <br />Ele recebe a ordem de serviço no tablet e visualiza:
+                                                </p>
 
-                                    <div className="bg-zinc-900 p-6 rounded-2xl text-sm border border-zinc-800 shadow-lg">
-                                        <p className="font-bold text-white mb-2 flex items-center gap-2">
-                                            <svg className="w-4 h-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            Rápido e prático
-                                        </p>
-                                        <p className="text-zinc-400">Tudo centralizado de forma ágil para não atrasar a produção.</p>
+                                                <div className="grid grid-cols-2 gap-3 mb-8">
+                                                    {[
+                                                        "Tipo de tubo",
+                                                        "Espessura",
+                                                        "Raio / curvatura",
+                                                        "Especificações do pedido"
+                                                    ].map((item, i) => (
+                                                        <div key={i} className="flex gap-2 items-center bg-zinc-50 p-3 rounded-lg border border-zinc-100">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                                                            <span className="text-xs text-zinc-700 font-semibold">{item}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+
+                                                <div className="mb-10 flex-1">
+                                                    <p className="text-sm font-bold text-zinc-900 mb-4">Durante a produção, ele registra:</p>
+                                                    <div className="space-y-3">
+                                                        {[
+                                                            "Parâmetros utilizados",
+                                                            "Ajustes realizados",
+                                                            "Observações importantes"
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="flex gap-3 items-center bg-orange-50/50 p-3 rounded-lg border border-orange-100/50">
+                                                                <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+                                                                <span className="text-sm text-zinc-700 font-medium">{item}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                <div className="bg-zinc-900 p-6 rounded-2xl text-sm border border-zinc-800 shadow-lg">
+                                                    <p className="font-bold text-white mb-2 flex items-center gap-2">
+                                                        <svg className="w-4 h-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                        Rápido e prático
+                                                    </p>
+                                                    <p className="text-zinc-400">Tudo centralizado de forma ágil para não atrasar a produção.</p>
+                                                </div>
+                                                <p className="mt-6 text-sm flex items-center justify-center gap-1.5 font-bold text-orange-500 group-hover:text-orange-600 transition-colors">
+                                                    <ExternalLink className="w-4 h-4" />
+                                                    Clique para ver o mockup
+                                                </p>
+                                            </CardContent>
+                                        </Card>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-[1024px] w-[95vw] p-0 overflow-hidden bg-transparent border-none shadow-none">
+                                    <DialogTitle className="sr-only">Mockup Sistema Operador</DialogTitle>
+                                    <DialogDescription className="sr-only">Visualização do mockup do painel de operação da curvadora em tablet</DialogDescription>
+                                    <OperatorDashboardMockup />
+                                </DialogContent>
+                            </Dialog>
                         </div>
 
                         {/* Bloco de Inspeção e Resultados */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
                             {/* Inspeção */}
-                            <div className="bg-white border-2 text-left border-zinc-300 p-8 rounded-2xl shadow-xl ring-1 ring-zinc-200 hover:shadow-2xl hover:ring-orange-200 hover:border-orange-300 transition-all relative overflow-hidden h-full flex flex-col">
-                                <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-500"></div>
+                            <div className="bg-white border border-zinc-200 text-left p-8 rounded-2xl shadow-lg hover:shadow-xl hover:border-orange-400 transition-all duration-300 relative overflow-hidden h-full flex flex-col group">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
                                 <h4 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                                     <svg className="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                                     Etapa Final – Inspeção
@@ -509,7 +548,7 @@ export default function SistemaCurvadoraPage() {
                             </div>
 
                             {/* O que nasce aqui */}
-                            <div className="bg-white border-2 text-left border-zinc-300 p-8 rounded-2xl shadow-xl ring-1 ring-zinc-200 hover:shadow-2xl hover:ring-orange-200 hover:border-orange-300 transition-all relative overflow-hidden h-full flex flex-col">
+                            <div className="bg-white border border-zinc-200 text-left p-8 rounded-2xl shadow-lg hover:shadow-xl hover:border-orange-400 transition-all duration-300 relative overflow-hidden h-full flex flex-col group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2" />
                                 <h4 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                                     <TrendingDown className="w-6 h-6 text-orange-500" />
@@ -540,8 +579,8 @@ export default function SistemaCurvadoraPage() {
                         </div>
 
                         {/* Resultado da Fase 2 */}
-                        <div className="bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-zinc-900 via-zinc-800 to-zinc-900 text-white rounded-[2rem] p-10 md:p-14 text-center mt-16 shadow-2xl relative overflow-hidden border border-zinc-700">
-                            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500" />
+                        <div className="bg-zinc-900 bg-gradient-to-b from-zinc-800 to-zinc-900 text-white rounded-3xl p-10 md:p-14 text-center mt-16 shadow-xl relative overflow-hidden border border-zinc-700">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500" />
 
                             <h3 className="text-2xl md:text-3xl font-bold mb-10 flex items-center justify-center gap-3">
                                 <Target className="w-8 h-8 text-orange-500" />
@@ -571,30 +610,7 @@ export default function SistemaCurvadoraPage() {
                     </div>
                 </div>
 
-                {/* Checklist de Viabilidade */}
-                <section className="mt-20 mb-16">
-                    <h3 className="text-2xl font-bold mb-6">Checklist de Viabilidade Técnica</h3>
-                    <Card className="bg-white shadow-xl border-2 border-zinc-300 ring-1 ring-zinc-200 overflow-hidden relative">
-                        <Accordion type="single" collapsible className="w-full">
-                            <AccordionItem value="item-1" className="px-6 border-b-zinc-100">
-                                <AccordionTrigger className="hover:text-orange-500 py-6">Infraestrutura Elétrica (NR10)</AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground space-y-2 pb-6">
-                                    <p>• Espaço físico no quadro elétrico atual para o gateway e sensores.</p>
-                                    <p>• Aterramento compatível e disjuntor de proteção dedicado para o gateway.</p>
-                                    <p>• Identificação das fases e tensões (220V/380V/440V).</p>
-                                </AccordionContent>
-                            </AccordionItem>
-                            <AccordionItem value="item-2" className="px-6 border-b-zinc-100">
-                                <AccordionTrigger className="hover:text-orange-500 py-6">Rede e Conectividade</AccordionTrigger>
-                                <AccordionContent className="text-muted-foreground space-y-2 pb-6">
-                                    <p>• Disponibilidade de Cabo Ethernet (preferível) ou Wi-Fi estável no ponto da máquina.</p>
-                                    <p>• Configuração de IP fixo na rede fabril para o gateway.</p>
-                                    <p>• Liberação de portas para comunicação Cloud (HTTP/MQTT).</p>
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
-                    </Card>
-                </section>
+
 
             </div>
 

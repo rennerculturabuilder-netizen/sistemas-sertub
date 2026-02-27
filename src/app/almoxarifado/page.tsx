@@ -148,37 +148,35 @@ export default function AlmoxarifadoPage() {
                                 </Card>
 
                                 {/* Fase 3 */}
-                                <Card className="bg-white border-orange-400 ring-2 ring-orange-500/10 shadow-md flex flex-col h-full relative overflow-hidden transform md:scale-105 z-10">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-[30px] translate-x-1/2 -translate-y-1/2" />
-                                    <CardHeader className="pb-4 font-bold">
-                                        <Badge className="bg-orange-500 text-white w-fit mb-4 text-xs font-bold px-3 py-1 border-none shadow-sm uppercase tracking-wider">Fase 3</Badge>
+                                <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-200 transition-colors">
+                                    <CardHeader className="pb-4">
+                                        <Badge className="bg-zinc-100 text-zinc-600 w-fit mb-4 text-xs font-bold px-3 py-1 border-none uppercase tracking-wider">Fase 3</Badge>
                                         <CardTitle className="text-lg font-bold text-zinc-900 leading-tight">Identificação de Retirada</CardTitle>
                                     </CardHeader>
-                                    <CardContent className="flex-1 relative z-10">
+                                    <CardContent className="flex-1">
                                         <ul className="space-y-4">
                                             {[
                                                 "Registro por colaborador",
                                                 "Identificação por login ou reconhecimento facial",
                                                 "Histórico individual de movimentação"
                                             ].map((item, i) => (
-                                                <li key={i} className="flex gap-3 items-start text-sm font-semibold text-zinc-800">
-                                                    <div className="w-2 h-2 rounded-full bg-orange-500 mt-1.5 shrink-0 shadow-sm" />
+                                                <li key={i} className="flex gap-3 items-start text-sm text-zinc-600 font-medium">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-zinc-400 mt-1.5 shrink-0" />
                                                     <span className="leading-snug">{item}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </CardContent>
-                                    <div className="h-1.5 w-full bg-orange-500 absolute bottom-0 left-0" />
                                 </Card>
 
                                 {/* Fase 4 */}
-                                <Card className="bg-zinc-50 border-zinc-200 border-dashed shadow-sm flex flex-col h-full hover:border-zinc-300 transition-colors">
+                                <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-200 transition-colors">
                                     <CardHeader className="pb-4">
-                                        <Badge className="bg-zinc-200 text-zinc-600 w-fit mb-4 text-xs font-bold px-3 py-1 border-none uppercase tracking-wider">Fase 4</Badge>
-                                        <CardTitle className="text-lg font-bold text-zinc-800 leading-tight">Evolução Gerencial</CardTitle>
+                                        <Badge className="bg-zinc-100 text-zinc-600 w-fit mb-4 text-xs font-bold px-3 py-1 border-none uppercase tracking-wider">Fase 4</Badge>
+                                        <CardTitle className="text-lg font-bold text-zinc-900 leading-tight">Evolução Gerencial</CardTitle>
                                     </CardHeader>
                                     <CardContent className="flex-1">
-                                        <ul className="space-y-4 opacity-80">
+                                        <ul className="space-y-4">
                                             {[
                                                 "Relatórios por setor",
                                                 "Alertas de estoque mínimo",
