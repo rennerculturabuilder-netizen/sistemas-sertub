@@ -81,7 +81,7 @@ export default function ProjetoSertub() {
                 {/* SEÇÃO 1 – Quem é a GR Tech */}
                 <section>
                     <div className="flex items-center gap-4 mb-8">
-                        <h3 className="text-sm font-bold tracking-widest text-zinc-400 uppercase">Seção 1</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-zinc-500 uppercase">Seção 1</h3>
                         <div className="h-px flex-1 bg-zinc-200"></div>
                     </div>
 
@@ -93,17 +93,17 @@ export default function ProjetoSertub() {
                                 <div className="w-12 h-1 bg-zinc-700 mt-2 relative z-10"></div>
                             </div>
                             <div className="md:col-span-3 p-8">
-                                <p className="text-lg text-zinc-700 leading-relaxed mb-6 font-medium">
+                                <p className="text-lg text-zinc-800 leading-relaxed mb-6 font-medium">
                                     A GR Tech é uma empresa especializada em Inteligência Artificial, automação empresarial e desenvolvimento de sistemas hiperpersonalizados.
                                     <br /><br />
-                                    <span className="text-zinc-500 font-normal">Nosso foco é transformar operações complexas em estruturas organizadas, eficientes e escaláveis.</span>
+                                    <span className="text-zinc-600 font-semibold">Nosso foco é transformar operações complexas em estruturas organizadas, eficientes e escaláveis.</span>
                                 </p>
                                 <ul className="grid sm:grid-cols-2 gap-4">
                                     {[
-                                        { text: "Organização estratégica de dados", icon: <Database className="w-5 h-5 text-zinc-400" /> },
-                                        { text: "Automação de processos internos", icon: <Settings2 className="w-5 h-5 text-zinc-400" /> },
-                                        { text: "Desenvolvimento de sistemas sob medida", icon: <Combine className="w-5 h-5 text-zinc-400" /> },
-                                        { text: "Estruturação de ativos digitais", icon: <Layers className="w-5 h-5 text-zinc-400" /> },
+                                        { text: "Organização estratégica de dados", icon: <Database className="w-5 h-5 text-orange-500" /> },
+                                        { text: "Automação de processos internos", icon: <Settings2 className="w-5 h-5 text-orange-500" /> },
+                                        { text: "Desenvolvimento de sistemas sob medida", icon: <Combine className="w-5 h-5 text-orange-500" /> },
+                                        { text: "Estruturação de ativos digitais", icon: <Layers className="w-5 h-5 text-orange-500" /> },
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3">
                                             <div className="mt-0.5">{item.icon}</div>
@@ -119,7 +119,7 @@ export default function ProjetoSertub() {
                 {/* SEÇÃO 2 – Do Modelo Tradicional à Hiperpersonalização */}
                 <section>
                     <div className="flex items-center gap-4 mb-8">
-                        <h3 className="text-sm font-bold tracking-widest text-zinc-400 uppercase">Seção 2</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-zinc-500 uppercase">Seção 2</h3>
                         <div className="h-px flex-1 bg-zinc-200"></div>
                     </div>
 
@@ -129,13 +129,13 @@ export default function ProjetoSertub() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Card 1: Tradicional */}
-                        <Card className="border-zinc-200 shadow-sm bg-white hover:border-zinc-300 transition-colors">
-                            <CardHeader className="border-b border-zinc-100 bg-zinc-50/50 pb-6">
-                                <div className="w-12 h-12 rounded-lg bg-zinc-100 flex items-center justify-center mb-4">
-                                    <Factory className="w-6 h-6 text-zinc-500" />
+                        <Card className="border-zinc-300 shadow-sm bg-zinc-50 hover:border-zinc-400 transition-colors">
+                            <CardHeader className="border-b border-zinc-200 bg-zinc-100/50 pb-6">
+                                <div className="w-12 h-12 rounded-lg bg-zinc-200 flex items-center justify-center mb-4">
+                                    <Factory className="w-6 h-6 text-zinc-600" />
                                 </div>
                                 <CardTitle className="text-xl text-zinc-900">Sistemas Tradicionais</CardTitle>
-                                <CardDescription className="text-base mt-2 text-zinc-600">
+                                <CardDescription className="text-base mt-2 text-zinc-700">
                                     Sistemas empresariais tradicionais (CRMs e ERPs) são desenvolvidos para atender milhares de empresas simultaneamente.
                                 </CardDescription>
                             </CardHeader>
@@ -189,7 +189,7 @@ export default function ProjetoSertub() {
                 {/* SEÇÃO 3 – Implementação por Fases */}
                 <section>
                     <div className="flex items-center gap-4 mb-8">
-                        <h3 className="text-sm font-bold tracking-widest text-zinc-400 uppercase">Seção 3</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-zinc-500 uppercase">Seção 3</h3>
                         <div className="h-px flex-1 bg-zinc-200"></div>
                     </div>
 
@@ -220,14 +220,14 @@ export default function ProjetoSertub() {
                                 desc: "Evolução para comunicação estruturada entre sistemas e visão unificada."
                             }
                         ].map((item, i) => (
-                            <Card key={i} className="border-zinc-200 shadow-sm bg-white relative group hover:border-zinc-400 transition-all duration-300">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-zinc-200 group-hover:bg-zinc-900 transition-colors"></div>
+                            <Card key={i} className="border-zinc-300 shadow-sm bg-white relative group hover:border-orange-400 transition-all duration-300">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-zinc-200 group-hover:bg-orange-500 transition-colors"></div>
                                 <CardHeader className="pb-4">
-                                    <span className="text-4xl font-black text-zinc-100 absolute top-4 right-4 pointer-events-none group-hover:text-zinc-50 transition-colors">0{item.phase}</span>
-                                    <CardTitle className="text-lg text-zinc-900 relative z-10 mt-2">Fase {item.phase} <br /><span className="text-zinc-500 text-sm font-medium">{item.title}</span></CardTitle>
+                                    <span className="text-5xl font-black text-zinc-100 absolute top-4 right-4 pointer-events-none group-hover:text-zinc-200 transition-colors">0{item.phase}</span>
+                                    <CardTitle className="text-lg text-zinc-900 relative z-10 mt-2">Fase {item.phase} <br /><span className="text-zinc-600 text-sm font-bold">{item.title}</span></CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-sm text-zinc-600 font-medium leading-relaxed">
+                                    <p className="text-sm text-zinc-700 font-medium leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </CardContent>
@@ -246,11 +246,11 @@ export default function ProjetoSertub() {
                 {/* SEÇÃO 4 – Agentes Inteligentes Personalizados */}
                 <section>
                     <div className="flex items-center gap-4 mb-8">
-                        <h3 className="text-sm font-bold tracking-widest text-zinc-400 uppercase">Seção 4</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-zinc-500 uppercase">Seção 4</h3>
                         <div className="h-px flex-1 bg-zinc-200"></div>
                     </div>
 
-                    <Card className="border-zinc-200 shadow-sm bg-white">
+                    <Card className="border-zinc-300 shadow-sm bg-white">
                         <CardHeader className="pb-4 flex flex-row items-start gap-4 space-y-0 border-b border-zinc-100">
                             <div className="w-14 h-14 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0">
                                 <Bot className="w-7 h-7 text-white" />
@@ -274,15 +274,15 @@ export default function ProjetoSertub() {
                                             "Apoiar decisões com base em dados históricos"
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-center gap-3">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-zinc-400"></div>
-                                                <span className="text-zinc-700 font-medium text-sm">{item}</span>
+                                                <div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div>
+                                                <span className="text-zinc-800 font-medium text-sm">{item}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 flex flex-col justify-center">
-                                    <p className="text-zinc-600 text-sm leading-relaxed mb-3">
+                                <div className="bg-zinc-100 border border-zinc-300 rounded-xl p-6 flex flex-col justify-center">
+                                    <p className="text-zinc-700 text-sm leading-relaxed mb-3">
                                         A criação de agentes será feita conforme necessidade e maturidade de cada setor.
                                     </p>
                                     <p className="text-zinc-900 text-sm font-bold flex items-center gap-2">
@@ -302,14 +302,14 @@ export default function ProjetoSertub() {
                         <div className="h-px flex-1 bg-zinc-200"></div>
                     </div>
 
-                    <Card className="border-zinc-200 shadow-sm bg-white overflow-hidden">
+                    <Card className="border-zinc-300 shadow-md bg-white overflow-hidden">
                         <div className="md:grid md:grid-cols-5 md:min-h-[300px]">
-                            <div className="md:col-span-2 bg-zinc-100 p-8 border-r border-zinc-200 flex flex-col justify-center">
+                            <div className="md:col-span-2 bg-zinc-100 p-8 border-r border-zinc-300 flex flex-col justify-center">
                                 <div className="w-12 h-12 rounded-lg bg-zinc-900 text-white flex items-center justify-center mb-6">
                                     <ShieldCheck className="w-6 h-6" />
                                 </div>
                                 <h2 className="text-2xl font-bold mb-3 text-zinc-900">Segurança e Controle Total</h2>
-                                <p className="text-zinc-600 font-medium text-sm leading-relaxed">
+                                <p className="text-zinc-700 font-medium text-sm leading-relaxed">
                                     Todos os dados gerados pertencem exclusivamente à Sertub.
                                 </p>
 
@@ -321,26 +321,26 @@ export default function ProjetoSertub() {
                                         "GR Tech sem acesso irrestrito aos dados"
                                     ].map((item, i) => (
                                         <div key={i} className="flex items-start gap-2">
-                                            <Lock className="w-4 h-4 text-zinc-400 mt-0.5 shrink-0" />
-                                            <span className="text-zinc-700 text-sm">{item}</span>
+                                            <Lock className="w-4 h-4 text-orange-500 mt-0.5 shrink-0" />
+                                            <span className="text-zinc-800 font-medium text-sm">{item}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             <div className="md:col-span-3 p-8 flex flex-col justify-center">
-                                <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <h3 className="text-sm font-bold text-zinc-500 uppercase tracking-wider mb-6 flex items-center gap-2">
                                     <Server className="w-4 h-4" /> Infraestrutura
                                 </h3>
 
                                 <div className="grid sm:grid-cols-2 gap-6 mb-8">
-                                    <div className="bg-zinc-50 border border-zinc-200 rounded-lg p-4">
+                                    <div className="bg-zinc-50 border border-zinc-300 shadow-sm rounded-lg p-4 hover:border-orange-200 transition-colors">
                                         <h4 className="text-xs font-bold text-zinc-500 uppercase mb-2">Fase Inicial</h4>
-                                        <p className="text-zinc-900 font-semibold text-sm">PostgreSQL <span className="text-zinc-400 font-normal">(Neon ou similar)</span></p>
+                                        <p className="text-zinc-900 font-bold text-sm">PostgreSQL <span className="text-zinc-500 font-medium">(Neon ou similar)</span></p>
                                     </div>
-                                    <div className="bg-zinc-50 border border-zinc-200 rounded-lg p-4">
+                                    <div className="bg-zinc-50 border border-zinc-300 shadow-sm rounded-lg p-4 hover:border-orange-200 transition-colors">
                                         <h4 className="text-xs font-bold text-zinc-500 uppercase mb-2">Fase de Expansão</h4>
-                                        <p className="text-zinc-900 font-semibold text-sm">AWS <span className="text-zinc-400 font-normal">(Amazon Web Services)</span></p>
+                                        <p className="text-zinc-900 font-bold text-sm">AWS <span className="text-zinc-500 font-medium">(Amazon Web Services)</span></p>
                                     </div>
                                 </div>
 
