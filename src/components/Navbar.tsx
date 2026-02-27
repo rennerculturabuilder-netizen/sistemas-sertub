@@ -63,7 +63,6 @@ export function Navbar() {
                     <nav className="hidden md:flex items-center gap-2">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href;
-                            const isROI = item.name === "ROI";
 
                             return (
                                 <Link
@@ -71,15 +70,13 @@ export function Navbar() {
                                     href={item.href}
                                     className={`
                                         text-xs font-bold uppercase tracking-wider transition-all px-4 py-2 rounded-full flex items-center gap-2
-                                        ${isROI
-                                            ? "bg-zinc-950 text-white hover:bg-zinc-800 shadow-sm"
-                                            : isActive
-                                                ? "bg-orange-500 text-white shadow-md shadow-orange-500/20"
-                                                : "text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900"
+                                        ${isActive
+                                            ? "bg-orange-500 text-white shadow-md shadow-orange-500/20"
+                                            : "text-zinc-500 hover:bg-zinc-200 hover:text-zinc-900"
                                         }
                                     `}
                                 >
-                                    <span className={isROI ? "text-orange-500" : ""}>{item.icon}</span>
+                                    <span>{item.icon}</span>
                                     {item.name}
                                 </Link>
                             );
