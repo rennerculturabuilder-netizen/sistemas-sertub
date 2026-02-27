@@ -3,6 +3,7 @@
 import { Navbar } from "@/components/Navbar";
 import { FooterNavigation } from "@/components/FooterNavigation";
 import { SectionHeader } from "@/components/SectionHeader";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Loader2, Database, ArrowLeft } from "lucide-react";
 
@@ -43,10 +44,10 @@ export default function ROIPage() {
 
                         {/* Botão de Voltar */}
                         <Button size="lg" className="bg-zinc-900 hover:bg-zinc-800 text-white font-bold px-8 rounded-full hover:-translate-y-1 shadow-lg hover:shadow-xl transition-all duration-300 h-14" asChild>
-                            <a href="/">
+                            <Link href="/">
                                 <ArrowLeft className="w-5 h-5 mr-2" />
                                 Voltar para o Início
-                            </a>
+                            </Link>
                         </Button>
                     </div>
                 </div>

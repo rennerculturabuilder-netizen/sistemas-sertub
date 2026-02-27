@@ -15,7 +15,7 @@ export function FooterNavigation() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-medium tracking-wide"
+                            className="w-full sm:w-auto border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-semibold px-8"
                             asChild
                         >
                             <Link href="/">
@@ -25,7 +25,7 @@ export function FooterNavigation() {
 
                         <Button
                             size="lg"
-                            className="w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white font-medium tracking-wide shadow-none"
+                            className="w-full sm:w-auto bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 shadow-sm hover:shadow"
                             asChild
                         >
                             <Link href="/proximos-passos">
