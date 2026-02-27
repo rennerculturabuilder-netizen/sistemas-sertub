@@ -10,32 +10,58 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden border-b border-zinc-200 min-h-[400px] flex items-center">
+      <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden border-b border-zinc-200 min-h-[450px] flex items-center bg-zinc-950">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
             src="/hero-maquina.png"
             alt="Fundo Industrial"
-            className="w-full h-full object-cover opacity-70 brightness-75"
+            className="w-full h-full object-cover opacity-50 grayscale-[50%]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/60 to-zinc-950/30" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-          <div className="flex flex-col items-center mb-8">
+          {/* Top Logos */}
+          <div className="flex items-center justify-center gap-3 md:gap-5 mb-8">
+            <span className="text-xl md:text-2xl font-black tracking-tighter text-white drop-shadow-md uppercase">
+              GR Tech
+            </span>
+
+            <span className="text-2xl md:text-3xl font-light text-orange-500 drop-shadow-sm">
+              +
+            </span>
+
             <img
               src="/logo.png"
               alt="Sertub Logo"
-              className="h-12 md:h-16 w-auto object-contain mb-10 opacity-100 drop-shadow-md"
+              className="h-6 md:h-8 w-auto object-contain grayscale brightness-200 drop-shadow-md"
             />
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 text-white uppercase leading-none drop-shadow-lg">
-            Implementação IA Sertub <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">por GR Labs</span>
+          {/* Main Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white uppercase leading-tight drop-shadow-2xl">
+            Sistemas Operacionais <br className="hidden md:block" /> Sertub
           </h1>
 
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-zinc-300 font-medium mb-10 max-w-2xl mx-auto drop-shadow-md">
+            Sistemas hiperpersonalizados, governança de dados e evolução operacional construída por fases.
+          </p>
 
+          {/* CTA Button */}
+          <div className="flex items-center justify-center mt-4">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-zinc-400 text-zinc-100 bg-transparent hover:bg-white/10 hover:text-white font-semibold text-sm md:text-base h-12 md:h-14 px-8 md:px-12 rounded-full backdrop-blur-sm transition-all active:scale-95 uppercase tracking-widest"
+              asChild
+            >
+              <Link href="/grtech-sertub">
+                Saiba Mais
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
