@@ -16,7 +16,7 @@ export function FooterNavigation() {
                         <Button
                             variant="outline"
                             size="lg"
-                            className="w-full sm:w-auto border-zinc-300 text-zinc-700 bg-transparent hover:bg-zinc-100 hover:text-zinc-900 font-semibold text-sm h-12 px-8 rounded-full transition-all active:scale-95 uppercase tracking-widest group"
+                            className="w-full sm:w-auto border-zinc-300 text-zinc-700 bg-transparent hover:bg-zinc-100 hover:text-zinc-900 font-semibold text-sm h-12 px-8 transition-all active:scale-95 uppercase tracking-widest group"
                             asChild
                         >
                             <Link href="/">
@@ -27,7 +27,7 @@ export function FooterNavigation() {
 
                         <Button
                             size="lg"
-                            className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm h-12 px-8 rounded-full transition-all hover:scale-105 active:scale-95 uppercase tracking-widest group shadow-md"
+                            className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm h-12 px-8 transition-all hover:scale-105 active:scale-95 uppercase tracking-widest group shadow-md"
                             asChild
                         >
                             <Link href="/proximos-passos">
