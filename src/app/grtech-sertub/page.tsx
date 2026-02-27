@@ -33,35 +33,44 @@ export default function ProjetoSertub() {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-zinc-100 border-b border-zinc-200">
-                <div className="absolute inset-0 z-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
+            <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-800 text-white border-b border-zinc-800 shadow-2xl">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute inset-0 z-0 bg-[radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-                        <div className="flex items-center gap-3">
-                            <Cpu className="w-10 h-10 text-zinc-900" />
-                            <span className="text-3xl md:text-4xl font-extrabold tracking-tighter text-zinc-900">GR Tech</span>
+                    <div className="flex items-center justify-center w-full mb-8 max-w-2xl mx-auto">
+                        <div className="flex-1 flex justify-end pr-4 md:pr-8">
+                            <img
+                                src="/logoGRTECH-branca.png"
+                                alt="GR Tech Logo"
+                                className="h-12 md:h-16 lg:h-20 w-auto object-contain drop-shadow-md opacity-90"
+                            />
                         </div>
 
-                        <span className="text-3xl font-light text-zinc-400">+</span>
+                        <span className="text-4xl md:text-5xl lg:text-6xl font-black text-orange-500 drop-shadow-md shrink-0 leading-none -mt-1">
+                            +
+                        </span>
 
-                        <img
-                            src="/logo.png"
-                            alt="Sertub Logo"
-                            className="h-10 md:h-12 w-auto object-contain drop-shadow-sm grayscale contrast-125"
-                        />
+                        <div className="flex-1 flex justify-start pl-4 md:pl-8">
+                            <img
+                                src="/LOGO-SERTUB-BRANCA.png"
+                                alt="Sertub Logo"
+                                className="h-12 md:h-16 lg:h-20 w-auto object-contain drop-shadow-md opacity-90"
+                            />
+                        </div>
                     </div>
 
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-zinc-900 leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white leading-tight">
                         Transformação Tecnológica <br className="hidden md:block" />
-                        <span className="text-zinc-500">Industrial Hiperpersonalizada</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Industrial Hiperpersonalizada</span>
                     </h1>
 
-                    <h2 className="text-xl md:text-2xl text-zinc-600 font-medium mb-6 max-w-3xl mx-auto">
+                    <h2 className="text-xl md:text-2xl text-zinc-300 font-medium mb-6 max-w-3xl mx-auto">
                         Implementação gradual de sistemas inteligentes, organizados e adaptados à realidade operacional da Sertub.
                     </h2>
 
-                    <p className="text-base md:text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
                         A GR Tech atua na Sertub estruturando dados, otimizando processos e desenvolvendo sistemas personalizados para aumentar produtividade e eficiência operacional.
                     </p>
                 </div>
@@ -147,28 +156,28 @@ export default function ProjetoSertub() {
                         </Card>
 
                         {/* Card 2: GR Tech */}
-                        <Card className="border-zinc-900 shadow-md bg-zinc-900 text-zinc-50 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-zinc-800 rounded-full opacity-30 blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                            <CardHeader className="border-b border-zinc-800 pb-6 relative z-10">
-                                <div className="w-12 h-12 rounded-lg bg-zinc-800 flex items-center justify-center mb-4 border border-zinc-700">
-                                    <Link2 className="w-6 h-6 text-zinc-300" />
+                        <Card className="border-orange-600 shadow-lg shadow-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-600 text-white relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-400 rounded-full opacity-40 blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                            <CardHeader className="border-b border-white/10 pb-6 relative z-10">
+                                <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4 border border-white/20 backdrop-blur-sm">
+                                    <Link2 className="w-6 h-6 text-white" />
                                 </div>
                                 <CardTitle className="text-xl text-white">Modelo GR Tech – Hiperpersonalização</CardTitle>
-                                <CardDescription className="text-base mt-2 text-zinc-400">
+                                <CardDescription className="text-base mt-2 text-orange-100 font-medium">
                                     A proposta da GR Tech é desenvolver sistemas adaptados à realidade operacional da Sertub.
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="pt-6 relative z-10">
                                 <ul className="space-y-4">
                                     {[
-                                        { text: "Construção sob medida", icon: <CheckCircle2 className="w-5 h-5 text-emerald-500/90" /> },
-                                        { text: "Ajustável conforme evolução da empresa", icon: <CheckCircle2 className="w-5 h-5 text-emerald-500/90" /> },
-                                        { text: "Baseado na operação real", icon: <CheckCircle2 className="w-5 h-5 text-emerald-500/90" /> },
-                                        { text: "Foco em eficiência prática", icon: <CheckCircle2 className="w-5 h-5 text-emerald-500/90" /> },
+                                        { text: "Construção sob medida", icon: <CheckCircle2 className="w-5 h-5 text-white" /> },
+                                        { text: "Ajustável conforme evolução da empresa", icon: <CheckCircle2 className="w-5 h-5 text-white" /> },
+                                        { text: "Baseado na operação real", icon: <CheckCircle2 className="w-5 h-5 text-white" /> },
+                                        { text: "Foco em eficiência prática", icon: <CheckCircle2 className="w-5 h-5 text-white" /> },
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-3">
                                             <div className="mt-0.5">{item.icon}</div>
-                                            <span className="text-zinc-300 text-sm font-medium">{item.text}</span>
+                                            <span className="text-orange-50 text-sm font-semibold">{item.text}</span>
                                         </li>
                                     ))}
                                 </ul>
