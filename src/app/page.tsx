@@ -46,13 +46,14 @@ export default function Home() {
           </div>
 
           {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white uppercase leading-tight drop-shadow-2xl">
-            Sistemas Operacionais <br className="hidden md:block" /> Sertub
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight drop-shadow-2xl">
+            Sistemas Operacionais <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Sertub</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-zinc-300 font-medium mb-10 max-w-2xl mx-auto drop-shadow-md">
-            Sistemas hiperpersonalizados, governança de dados e evolução operacional construída por fases.
+            Arquitetura de sistemas personalizados para controle, eficiência e evolução operacional.
           </p>
 
           {/* CTA Button */}
