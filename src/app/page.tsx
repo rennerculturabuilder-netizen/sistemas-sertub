@@ -85,20 +85,19 @@ export default function Home() {
 
             {/* Card 1: Sistema de Reconhecimento Facial */}
             <Link href="/monitoramento" className="group block">
-              <Card className="h-full border-zinc-300 bg-white shadow-md transition-all duration-300 hover:border-orange-500 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="h-full border-red-500 bg-white shadow-md transition-all duration-300 hover:border-red-600 hover:shadow-2xl hover:-translate-y-2">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-zinc-900 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-red-500 transition-colors">
                     <Camera className="w-7 h-7 text-zinc-600 group-hover:text-white transition-colors" />
                   </div>
                   <CardTitle className="text-xl text-zinc-950">Sistema de Reconhecimento Facial</CardTitle>
-                  <CardDescription className="text-sm mt-2 font-medium text-orange-600 flex items-center gap-1">
-                    <ScanFace className="w-4 h-4" />
-                    Visão Computacional
+                  <CardDescription className="text-sm mt-2 text-red-600 font-medium font-bold">
+                    Infraestrutura Externa
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-zinc-600 leading-relaxed">
-                    Segurança e identificação inteligente através de visão computacional de última geração.
+                    A adequação estrutural e de câmeras para reconhecimento deve ser feita por parceiro terceirizado.
                   </p>
                 </CardContent>
                 <CardFooter className="pt-4 border-t border-zinc-100 mt-auto">
@@ -112,13 +111,13 @@ export default function Home() {
 
             {/* Card 2: Sistema Curvadora */}
             <Link href="/sistema-curvadora" className="group block">
-              <Card className="h-full border-zinc-300 bg-white shadow-md transition-all duration-300 hover:border-orange-500 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="h-full border-green-500 bg-white shadow-md transition-all duration-300 hover:border-green-600 hover:shadow-2xl hover:-translate-y-2">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-zinc-900 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors">
                     <Factory className="w-7 h-7 text-zinc-600 group-hover:text-white transition-colors" />
                   </div>
                   <CardTitle className="text-xl text-zinc-950">Sistema Curvadora</CardTitle>
-                  <CardDescription className="text-sm mt-2 text-orange-500 font-medium font-bold">
+                  <CardDescription className="text-sm mt-2 text-green-600 font-medium font-bold">
                     Controle de Processos
                   </CardDescription>
                 </CardHeader>
@@ -138,13 +137,13 @@ export default function Home() {
 
             {/* Card 3: Sistema Almoxarifado */}
             <Link href="/almoxarifado" className="group block">
-              <Card className="h-full border-zinc-300 bg-white shadow-md transition-all duration-300 hover:border-orange-500 hover:shadow-2xl hover:-translate-y-2">
+              <Card className="h-full border-green-500 bg-white shadow-md transition-all duration-300 hover:border-green-600 hover:shadow-2xl hover:-translate-y-2">
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-zinc-900 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-zinc-100 border border-zinc-200 flex items-center justify-center mb-4 group-hover:bg-green-500 transition-colors">
                     <Package className="w-7 h-7 text-zinc-600 group-hover:text-white transition-colors" />
                   </div>
                   <CardTitle className="text-xl text-zinc-950">Sistema Almoxarifado</CardTitle>
-                  <CardDescription className="text-sm mt-2 text-orange-500 font-medium font-bold">
+                  <CardDescription className="text-sm mt-2 text-green-600 font-medium font-bold">
                     Gestão de Ativos
                   </CardDescription>
                 </CardHeader>

@@ -54,9 +54,11 @@ export default function SistemaCurvadoraPage() {
                                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
 
                                 <div className="container mx-auto px-4 max-w-4xl relative z-10 flex flex-col items-center justify-center text-center">
-                                    <Badge className="bg-orange-500 hover:bg-orange-600 mb-6 text-white border-none px-4 py-1 text-sm">Sistema Curvadora</Badge>
+                                    <div className="flex justify-center mb-6">
+                                        <Factory className="w-16 h-16 text-orange-500" />
+                                    </div>
                                     <h1 className="text-4xl md:text-6xl font-extrabold mb-6 uppercase tracking-tight text-white leading-tight">
-                                        Inteligência <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Industrial</span>
+                                        SISTEMA <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">CURVADORA</span>
                                     </h1>
                                     <p className="text-zinc-300 text-lg md:text-xl mb-16 max-w-3xl leading-relaxed">
                                         Monitoramento em tempo real e evolução para gestão digital completa do processo de curvamento.
@@ -65,29 +67,9 @@ export default function SistemaCurvadoraPage() {
                                     {/* Divider */}
                                     <div className="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mb-16" />
 
-                                    <Badge className="bg-orange-500/20 text-orange-400 mb-6 border border-orange-500/30 px-4 py-1">Fundação Automática</Badge>
-                                    <h2 className="text-2xl md:text-4xl font-bold mb-6 tracking-tight">
-                                        Fase 1: Monitoramento <br /><span className="text-zinc-400 text-xl font-normal mt-2 block">Tempo de Máquina Real</span>
+                                    <h2 className="text-2xl md:text-4xl font-bold tracking-tight">
+                                        Fase 1: Monitoramento <br /><span className="text-zinc-400 text-xl font-normal mt-2 block">Tempo de máquina em funcionamento</span>
                                     </h2>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left w-full mt-6">
-                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                                            <Target className="w-8 h-8 text-orange-400 mb-4" />
-                                            <h4 className="font-bold mb-2">Inteligência de Ativos</h4>
-                                            <p className="text-sm text-zinc-500">Mapeamento contínuo sobre quando a curvadora está efetivamente operando ou parada através de hardware direto no motor.</p>
-                                        </div>
-                                        <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                                            <Lightbulb className="w-8 h-8 text-orange-400 mb-4" />
-                                            <h4 className="font-bold mb-2">Retorno sobre Investimento</h4>
-                                            <p className="text-sm text-zinc-500">Eliminação total de erros de apontamento manual, fornecendo KPIs precisos para auditorias de custo industrial e produtividade pura.</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-orange-500/10 border border-orange-500/20 rounded-xl p-5 text-sm flex gap-4 items-center mt-4 shadow-sm w-full text-left">
-                                        <AlertCircle className="w-6 h-6 text-orange-400 shrink-0" />
-                                        <div className="text-zinc-300">
-                                            <strong className="font-bold text-white">Estratégia de Dados:</strong> Esta etapa consolida a sólida base histórica necessária para futuramente alimentar os modelos de Inteligência Artificial da Fase 2.
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </motion.section>
