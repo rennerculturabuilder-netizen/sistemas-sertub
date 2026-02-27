@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { FooterNavigation } from "@/components/FooterNavigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -363,21 +364,9 @@ export default function ProjetoSertub() {
                     </Card>
                 </section>
 
-                <div className="flex justify-center pb-10">
-                    <Button
-                        asChild
-                        variant="ghost"
-                        size="lg"
-                        className="group text-zinc-500 hover:text-orange-500 hover:bg-orange-50 font-bold tracking-widest uppercase transition-all"
-                    >
-                        <Link href="/">
-                            <ArrowLeft className="w-5 h-5 mr-3 group-hover:-translate-x-1 transition-transform" />
-                            Voltar para a Home
-                        </Link>
-                    </Button>
-                </div>
-
             </div>
+
+            <FooterNavigation />
         </main>
     );
 }

@@ -1,10 +1,12 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
+import { FooterNavigation } from "@/components/FooterNavigation";
 import { SectionHeader } from "@/components/SectionHeader";
 import { DiagramSVG } from "@/components/DiagramSVG";
-import { ScenarioCards } from "@/components/ScenarioCards";
-import { ReportMock } from "@/components/ReportMock";
+
+
+import { DashboardMockup } from "@/components/DashboardMockup";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
     Accordion,
@@ -29,7 +31,8 @@ import {
     AlertTriangle,
     History,
     FileCheck,
-    ArrowRight
+    ArrowRight,
+    ExternalLink, Network, Wrench
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -75,51 +78,211 @@ export default function SistemaCurvadoraPage() {
                         </motion.section>
 
                         <section>
-                            <h3 className="text-2xl font-bold mb-8">Fluxo de Monitoramento</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                            <h3 className="text-2xl font-bold mb-8">Como o Monitoramento Funciona</h3>
+
+                            {/* Horizontal Flow Container */}
+                            <div className="flex flex-col md:flex-row gap-4 relative">
+                                {/* Connecting Line for Desktop */}
+                                <div className="hidden md:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-zinc-200 z-0"></div>
+
                                 {[
-                                    { num: "01", title: "Detecção", desc: "Sensor de corrente instalado no motor principal detecta o fluxo de energia." },
-                                    { num: "02", title: "Interpretação", desc: "Gateway de hardware processa os dados e traduz em status ON/OFF." },
-                                    { num: "03", title: "Transmissão", desc: "Eventos com Timestamp são enviados para o sistema via rede local." },
-                                    { num: "04", title: "Consolidação", desc: "O software gera relatórios de disponibilidade e tempo de máquina." }
+                                    { num: "1", title: "Detecção na Máquina", desc: "Um sensor de corrente será instalado no motor principal para identificar quando a máquina está ligada ou desligada." },
+                                    { num: "2", title: "Processamento Local", desc: "Um gateway interpreta automaticamente o sinal do sensor e registra o status de funcionamento." },
+                                    { num: "3", title: "Envio para o Sistema", desc: "As informações são enviadas para o sistema da empresa e armazenadas de forma estruturada." },
+                                    { num: "4", title: "Dashboard e Relatórios", desc: "Será desenvolvido um dashboard para acompanhamento de tempo ligado, sessões e disponibilidade da máquina." }
                                 ].map((step, i) => (
-                                    <div key={i} className="relative p-6 bg-white rounded-xl shadow-sm border border-zinc-200">
-                                        <div className="text-4xl font-extrabold text-orange-500/10 absolute top-4 right-4">{step.num}</div>
-                                        <h4 className="text-lg font-bold mb-2 relative z-10 text-zinc-900">{step.title}</h4>
-                                        <p className="text-sm text-zinc-600 relative z-10">{step.desc}</p>
+                                    <div key={i} className="flex-1 relative z-10 flex flex-col items-center text-center">
+                                        <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold text-xl mb-4 shadow-md ring-4 ring-zinc-50">
+                                            {step.num}
+                                        </div>
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-zinc-200 h-full w-full relative">
+                                            {i < 3 && <ArrowRight className="hidden md:block absolute -right-6 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-300" />}
+                                            <h4 className="text-lg font-bold mb-3 text-zinc-900">{step.title}</h4>
+                                            <p className="text-sm text-zinc-600 leading-relaxed">{step.desc}</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
+
+
                         </section>
 
-                        <section>
-                            <h3 className="text-2xl font-bold mb-6">Arquitetura da Solução</h3>
-                            <DiagramSVG />
-                        </section>
+                        <section className="space-y-16">
+                            <DashboardMockup />
 
-                        <section>
-                            <h3 className="text-2xl font-bold mb-2">Opções de Hardware</h3>
-                            <p className="text-muted-foreground mb-6">Diferentes níveis de investimento e robustez para o ambiente fabril.</p>
-                            <ScenarioCards />
-                        </section>
+                            {/* NOVO BLOCO: Kits para Implantação */}
+                            <div>
+                                <h3 className="text-2xl font-bold text-zinc-900 mb-8">Kits recomendados (Fase 1 – Máquina Ligada)</h3>
 
-                        <section>
-                            <ReportMock />
-                        </section>
+                                {/* Cards de Orçamento e Validação */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                                    {/* CARD A: ORÇAMENTO */}
+                                    <Card className="bg-white border-zinc-200 shadow-sm flex flex-col h-full hover:border-orange-300 transition-colors">
+                                        <CardHeader className="pb-4 pt-8">
+                                            <Badge className="bg-zinc-100 text-zinc-600 hover:bg-zinc-200 w-fit mb-4 text-xs font-semibold">Estimativa preliminar</Badge>
+                                            <CardTitle className="text-xl font-bold text-zinc-900 leading-tight">Orçamento de Referência <br /><span className="text-sm font-semibold text-zinc-500">— Fase 1 (Máquina Ligada)</span></CardTitle>
+                                            <CardDescription className="text-sm mt-3 text-zinc-600 leading-relaxed font-medium">
+                                                Este orçamento é uma referência para estimar investimento. A definição final depende de validação técnica no quadro elétrico e alinhamento com Marcelo (responsável pela máquina) e eletricista NR10.
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="flex flex-col flex-1 px-4 lg:px-6 pb-6">
+                                            <div className="text-center bg-orange-50 border border-orange-100 py-4 rounded-xl mb-6 shadow-sm">
+                                                <div className="text-[10px] uppercase font-bold text-orange-600 tracking-wider mb-1">Total Estimado</div>
+                                                <div className="text-3xl font-extrabold text-orange-600">R$ 2.210</div>
+                                            </div>
 
-                        <section className="border border-orange-100 bg-orange-50/30 p-6 md:p-8 rounded-xl shadow-sm relative overflow-hidden">
-                            <div className="flex items-start gap-4">
-                                <div className="bg-white p-3 rounded-full hidden md:block mt-1 shadow-sm">
-                                    <Zap className="w-6 h-6 text-orange-500" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold mb-3 text-zinc-900">Evolução de Hardware (Fase 1.5)</h3>
-                                    <p className="text-zinc-600 mb-4 leading-relaxed">
-                                        Para curvadoras hidráulicas onde a bomba fica ligada constante, a evolução consiste em adicionar um segundo canal de medição ou sensor de vibração para diferenciar <span className="text-zinc-900 font-bold">"Ligada"</span> de <span className="text-zinc-900 font-bold">"Curvando"</span>.
-                                    </p>
+                                            <div className="flex-1">
+                                                <Accordion type="single" collapsible className="w-full">
+                                                    {[
+                                                        {
+                                                            name: "TOMZN TO194E-9SY — Multimedidor Trifásico + TC 200A",
+                                                            price: "R$ 471",
+                                                            href: "https://www.mercadolivre.com.br/multimedidor-grandezas-eletricas-energia-trifasico-com-tc/up/MLBU602248891",
+                                                            note: "Selecionar TC 200A no momento da compra."
+                                                        },
+                                                        {
+                                                            name: "EIC-ETH485 — Conversor Ethernet → RS485 Modbus",
+                                                            price: "R$ 332",
+                                                            href: "https://www.mercadolivre.com.br/conversor-ethernet-rs485-485-gateway-modbus-c-nota-fiscal/up/MLBU754015583",
+                                                            note: null
+                                                        },
+                                                        {
+                                                            name: "Cabo Discabos RS485 Blindado 12m — 22 AWG",
+                                                            price: "R$ 199",
+                                                            href: "https://www.mercadolivre.com.br/cabo-para-automacao-residencia-blindado-protocolo-rs-485-12m/up/MLBU1426064444",
+                                                            note: null
+                                                        },
+                                                        {
+                                                            name: "Kit NextPi — Raspberry Pi 4 4GB + SD 128GB",
+                                                            price: "R$ 1.208",
+                                                            href: "https://produto.mercadolivre.com.br/MLB-4507421806-kit-raspberry-pi-4-4gb-case-cooler-fonte-hdmi-128gb-nf-_JM",
+                                                            note: null
+                                                        }
+                                                    ].map((prod, idx) => (
+                                                        <AccordionItem value={`oa-${idx}`} key={idx} className="border-b-zinc-100 px-0">
+                                                            <AccordionTrigger className="hover:text-orange-500 text-left text-sm font-semibold text-zinc-800 py-4 data-[state=open]:text-orange-600 outline-none group hover:no-underline [&[data-state=open]>div>svg]:rotate-90">
+                                                                <div className="flex items-center justify-between w-full gap-2 relative pl-6">
+                                                                    <svg className="w-3.5 h-3.5 absolute left-0 top-1/2 -translate-y-1/2 text-zinc-400 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                                                                    <span className="leading-snug">
+                                                                        {prod.name}
+                                                                    </span>
+                                                                    <span className="shrink-0 text-zinc-500 font-medium whitespace-nowrap hidden sm:inline-block">{prod.price}</span>
+                                                                </div>
+                                                            </AccordionTrigger>
+                                                            <AccordionContent className="text-zinc-600 space-y-4 pb-4 pl-6">
+                                                                <div className="sm:hidden font-medium text-orange-600 text-sm mb-2">{prod.price}</div>
+                                                                {prod.note && (
+                                                                    <div className="bg-amber-50 text-amber-900 px-3 py-2 rounded text-xs font-semibold">Nota: {prod.note}</div>
+                                                                )}
+                                                                <Button asChild variant="outline" size="sm" className="w-full mt-2 font-semibold hover:border-orange-500 hover:text-orange-500 hover:bg-orange-50 transition-colors group">
+                                                                    <a href={prod.href} target="_blank" rel="noopener noreferrer">
+                                                                        Ver produto no MercadoLivre
+                                                                        <ExternalLink className="w-3.5 h-3.5 ml-2 text-zinc-400 group-hover:text-orange-500" />
+                                                                    </a>
+                                                                </Button>
+                                                            </AccordionContent>
+                                                        </AccordionItem>
+                                                    ))}
+                                                </Accordion>
+                                            </div>
+
+                                            <div className="mt-8 pt-4 border-t border-zinc-100">
+                                                <div className="text-center text-xs text-zinc-600 font-semibold mb-3">
+                                                    Fluxo: Medidor → RS485 → Gateway → Ethernet → Raspberry Pi → API → Dashboard.
+                                                </div>
+                                                <div className="text-center text-[11px] text-zinc-400 max-w-[280px] mx-auto">
+                                                    Valores referenciais. Podem variar conforme disponibilidade e frete.
+                                                </div>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+
+                                    {/* CARD B: VALIDAÇÃO */}
+                                    <Card className="bg-zinc-50 border-zinc-200 shadow-sm flex flex-col h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-zinc-100 via-zinc-50 to-white relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full blur-[40px] translate-x-1/2 -translate-y-1/2" />
+                                        <CardHeader className="pb-4 pt-8">
+                                            <Badge className="bg-orange-100 text-orange-800 border-none w-fit mb-4 text-xs font-bold px-3 py-1">Obrigatório antes da compra</Badge>
+                                            <CardTitle className="text-xl font-bold text-zinc-900 leading-tight">Notas de Validação <br /><span className="text-sm font-semibold text-zinc-500">(Marcelo + Infraestrutura)</span></CardTitle>
+                                            <CardDescription className="text-sm mt-3 text-zinc-600 leading-relaxed font-medium">
+                                                Antes de comprar qualquer item, precisamos validar as condições reais da máquina e do ambiente para garantir compatibilidade e instalação segura.
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="flex flex-col flex-1 px-4 lg:px-6 pb-6 relative z-10">
+
+                                            <div className="space-y-8 flex-1">
+                                                {/* Bloco 1 */}
+                                                <div>
+                                                    <h5 className="font-bold text-zinc-900 text-[13px] uppercase tracking-wider flex items-center gap-2 mb-4">
+                                                        <Settings2 className="w-4 h-4 text-orange-500" />
+                                                        Dados da máquina (com Marcelo)
+                                                    </h5>
+                                                    <div className="space-y-3">
+                                                        {[
+                                                            "Tensão da máquina: 220V / 380V / 440V (trifásico)",
+                                                            "Corrente nominal do motor (A) ou potência (kW/CV)",
+                                                            "Existe inversor de frequência ou soft-starter?",
+                                                            "A bomba hidráulica fica ligada continuamente quando a máquina está “ligada”?",
+                                                            "Melhor ponto de medição no quadro (antes/depois do contator, qual circuito do motor)"
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="flex gap-2.5 items-start">
+                                                                <div className="w-4 h-4 rounded border-2 border-zinc-300 bg-white mt-0.5 shrink-0" />
+                                                                <span className="text-sm text-zinc-700 leading-snug">{item}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Bloco 2 */}
+                                                <div>
+                                                    <h5 className="font-bold text-zinc-900 text-[13px] uppercase tracking-wider flex items-center gap-2 mb-4">
+                                                        <Network className="w-4 h-4 text-orange-500" />
+                                                        Infraestrutura de rede (ambiente)
+                                                    </h5>
+                                                    <div className="space-y-3">
+                                                        {[
+                                                            "Há sinal de Wi-Fi estável perto da curvadora?",
+                                                            "Existe ponto de rede Ethernet disponível?",
+                                                            "Se não houver ponto, dá para puxar cabo? (rota e distância)",
+                                                            "Existe necessidade de IP fixo / DHCP na rede da empresa?",
+                                                            "Restrição de acesso (firewall/porta) para enviar dados ao sistema?"
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="flex gap-2.5 items-start">
+                                                                <div className="w-4 h-4 rounded border-2 border-zinc-300 bg-white mt-0.5 shrink-0" />
+                                                                <span className="text-sm text-zinc-700 leading-snug">{item}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                {/* Bloco 3 */}
+                                                <div>
+                                                    <h5 className="font-bold text-zinc-900 text-[13px] uppercase tracking-wider flex items-center gap-2 mb-4">
+                                                        <Wrench className="w-4 h-4 text-orange-500" />
+                                                        Instalação física e elétrica (NR10)
+                                                    </h5>
+                                                    <div className="space-y-3">
+                                                        {[
+                                                            "Espaço disponível no quadro para instalar medidor DIN",
+                                                            "Caixa de proteção (IP) para o gateway / organização do cabeamento",
+                                                            "Necessidade de fonte 12V/24V no quadro (se aplicável)",
+                                                            "Proteção contra surtos e aterramento adequados",
+                                                            "Distância aproximada entre medidor e gateway (usar 12m como referência do cabo)"
+                                                        ].map((item, i) => (
+                                                            <div key={i} className="flex gap-2.5 items-start">
+                                                                <div className="w-4 h-4 rounded border-2 border-zinc-300 bg-white mt-0.5 shrink-0" />
+                                                                <span className="text-sm text-zinc-700 leading-snug">{item}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </CardContent>
+                                    </Card>
                                 </div>
                             </div>
                         </section>
+
 
                         <section className="mt-20 border-t border-zinc-200">
                             {/* Break out of container by negative margins */}
@@ -154,13 +317,7 @@ export default function SistemaCurvadoraPage() {
                                         </div>
                                     </div>
 
-                                    <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold h-12 px-8 rounded-full transition-all hover:scale-105 active:scale-95 group" onClick={() => {
-                                        const fase2Content = document.getElementById('fase2-content');
-                                        fase2Content?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                    }}>
-                                        Explorar Fase 2
-                                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    </Button>
+
                                 </div>
                             </div>
                         </section>
@@ -268,10 +425,7 @@ export default function SistemaCurvadoraPage() {
                                 </Card>
                             </div>
 
-                            {/* Enhanced Dashboard Section */}
-                            <div className="mt-8">
-                                <ReportMock />
-                            </div>
+
                         </section>
 
                         <section>
@@ -318,6 +472,8 @@ export default function SistemaCurvadoraPage() {
                 </section>
 
             </div>
+
+            <FooterNavigation />
         </main>
     );
 }

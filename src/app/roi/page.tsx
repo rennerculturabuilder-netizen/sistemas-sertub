@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
+import { FooterNavigation } from "@/components/FooterNavigation";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/ui/button";
 import { Loader2, Database, ArrowLeft } from "lucide-react";
@@ -50,6 +51,8 @@ export default function ROIPage() {
                     </div>
                 </div>
             </div>
+
+            <FooterNavigation />
         </main>
     );
 }

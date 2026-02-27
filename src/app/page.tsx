@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { FooterNavigation } from "@/components/FooterNavigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Factory, Activity, ArrowRight, ShieldAlert, Zap, Camera, ScanFace, Package, Calculator } from "lucide-react";
@@ -47,8 +48,8 @@ export default function Home() {
 
           {/* Main Title */}
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 text-white leading-tight drop-shadow-2xl">
-            Sistemas Operacionais <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">Sertub</span>
+            SISTEMAS OPERACIONAIS <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">SERTUB</span>
           </h1>
 
           {/* Subtitle */}
@@ -165,6 +166,7 @@ export default function Home() {
         </div>
       </section>
 
+      <FooterNavigation />
     </main>
   );
 }

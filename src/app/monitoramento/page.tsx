@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/Navbar";
+import { FooterNavigation } from "@/components/FooterNavigation";
 import { Camera, AlertCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -53,6 +54,8 @@ export default function MonitoramentoPage() {
                     </div>
                 </div>
             </div>
+
+            <FooterNavigation />
         </main>
     );
 }
